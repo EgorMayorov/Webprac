@@ -2,38 +2,38 @@ DROP TABLE "Books", "Book&Copy", "Records", "Reader";
 
 CREATE TABLE "Books" (
                          "Book_ID" int,
-                         "Name" text,
-                         "Author" text,
-                         "Publishing_house" text,
-                         "Amount" int,
+                         "Name" text not null ,
+                         "Author" text not null ,
+                         "Publishing_house" text not null ,
+                         "Amount" int not null ,
                          "About" text,
-                         "Genre" text,
-                         "Date_of_receiving" date,
+                         "Genre" text not null ,
+                         "Date_of_receiving" date not null ,
                          PRIMARY KEY ("Book_ID")
 );
 
 CREATE TABLE "Book&Copy" (
-                             "Book_ID" int,
+                             "Book_ID" int not null ,
                              "Copy_ID" int,
                              PRIMARY KEY ("Copy_ID")
 );
 
 CREATE TABLE "Records" (
                            "Record_ID" int,
-                           "Reader_ID" int,
-                           "Copy_ID" int,
-                           "Taking_date" date,
-                           "Returning_date" date,
+                           "Reader_ID" int not null ,
+                           "Copy_ID" int not null ,
+                           "Taking_date" date not null ,
+                           "Returning_date" date not null ,
                            PRIMARY KEY ("Record_ID")
 );
 
 CREATE TABLE "Reader" (
                           "Reader_ID" int,
-                          "Name" text,
-                          "Surname" text,
+                          "Name" text not null ,
+                          "Surname" text not null ,
                           "Patronymic" text,
-                          "Card_number" int,
-                          "Card_date" date,
+                          "Card_number" int not null unique ,
+                          "Card_date" date not null ,
                           "Date_of_birth" date,
                           "Address" text,
                           "Phone_number" varchar,
