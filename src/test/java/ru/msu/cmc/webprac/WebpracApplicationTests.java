@@ -1,4 +1,4 @@
-package ru.msu.ru.webprac;
+package ru.msu.cmc.webprac;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

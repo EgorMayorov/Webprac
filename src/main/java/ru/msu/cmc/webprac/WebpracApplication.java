@@ -1,4 +1,4 @@
-package ru.msu.ru.webprac;
+package ru.msu.cmc.webprac;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
