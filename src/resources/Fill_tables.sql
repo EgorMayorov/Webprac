@@ -1,5 +1,5 @@
-INSERT INTO "Reader" ("Reader_ID", "Name", "Surname", "Patronymic", "Card_number", "Card_date",
-                      "Date_of_birth", "Address", "Phone_number") VALUES
+INSERT INTO reader ("reader_id", "name", "surname", "patronymic", "card_number", "card_date",
+                      "date_of_birth", "address", "phone_number") VALUES
     (1, 'Андрей', 'Скороходов','Дмитриевич', 100001, '2020-01-01'::date,
      '1978-05-12'::date, 'улица Фокина, д54, кв37', 89107349856),
     (2, 'Матвей', 'Яковлев','Романович', 100002, '2020-01-01'::date,
@@ -11,8 +11,8 @@ INSERT INTO "Reader" ("Reader_ID", "Name", "Surname", "Patronymic", "Card_number
     (5, 'Иван', 'Лаптев','Петрович', 100005, '2020-01-01'::date,
      '1997-08-22'::date, 'улица Новаторов, д76, кв23', 89101237669);
 
-INSERT INTO "Books" ("Book_ID", "Name", "Author", "Publishing_house", "Amount",
-                     "About", "Genre", "Date_of_receiving") VALUES
+INSERT INTO books ("book_id", "name", "author", "publishing_house", "amount",
+                     "about", "genre", "date_of_receiving") VALUES
     (1, 'Приключения Эраста Фандорина. Азазель', 'Борис Акунин', 'Новый детектив', 10,
      'Книга рассказывает о приключениях детектива Эраста Фандорина. Захватывающий сюжет!',
      'исторический детектив', '2020-01-01'::date),
@@ -29,14 +29,14 @@ INSERT INTO "Books" ("Book_ID", "Name", "Author", "Publishing_house", "Amount",
      'Книга рассказывает о приключениях детектива Эраста Фандорина. Захватывающий сюжет!',
      'исторический детектив', '2020-01-01'::date);
 
-INSERT INTO "Book&Copy" ("Book_ID", "Copy_ID") VALUES
+INSERT INTO book_copy ("book_id", "copy_id") VALUES
     (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9), (1, 10),
     (2, 11), (2, 12), (2, 13), (2, 14), (2, 15), (2, 16), (2, 17), (2, 18), (2, 19), (2, 20),
     (3, 21), (3, 22), (3, 23), (3, 24), (3, 25), (3, 26), (3, 27), (3, 28), (3, 29), (3, 30),
     (4, 31), (4, 32), (4, 33), (4, 34), (4, 35), (4, 36), (4, 37), (4, 38), (4, 39), (4, 40),
     (5, 41), (5, 42), (5, 43), (5, 44), (5, 45), (5, 46), (5, 47), (5, 48), (5, 49), (5, 50);
 
-INSERT INTO "Records" ("Record_ID", "Reader_ID", "Copy_ID", "Taking_date", "Returning_date") VALUES
+INSERT INTO records ("record_id", "reader_id", "copy_id", "taking_date", "returning_date") VALUES
     (1, 1, 1, '2021-01-01'::date, '2021-02-01'::date),
     (2, 2, 2, '2021-01-01'::date, '2021-02-01'::date),
     (3, 3, 3, '2021-01-01'::date, '2021-02-01'::date),
