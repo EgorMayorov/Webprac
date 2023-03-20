@@ -6,7 +6,7 @@
     <session-factory>
         <!-- Database connection settings -->
         <property name="connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.url">jdbc:postgresql://localhost/Website</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/Webprac</property>
         <property name="connection.username">postgres</property>
         <property name="connection.password"/>
         <property name="show_sql">true</property>
