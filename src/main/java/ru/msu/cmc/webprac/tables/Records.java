@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Records")
+@Table(name = "records")
 @Getter
 @Setter
 @ToString
@@ -16,20 +16,20 @@ import java.util.Objects;
 public class Records {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, name = "Record_ID")
+    @Column(nullable = false, name = "record_id")
     private long record_id;
 
-    @Column(nullable = false, name = "Reader_ID")
+    @Column(nullable = false, name = "reader_id")
     private long reader_id;
 
-    @Column(nullable = false, name = "Copy_ID")
+    @Column(nullable = false, name = "copy_id")
     private long copy_id;
 
-    @Column(nullable = false, name = "Taking_date")
+    @Column(nullable = false, name = "taking_date")
     @NonNull
     private Date taking_date;
 
-    @Column(nullable = false, name = "Returning_date")
+    @Column(nullable = false, name = "returning_date")
     @NonNull
     private Date returning_date;
 

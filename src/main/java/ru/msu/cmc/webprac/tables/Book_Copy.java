@@ -6,7 +6,7 @@ import lombok.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Book&Copy")
+@Table(name = "book_copy")
 @Getter
 @Setter
 @ToString
@@ -14,12 +14,12 @@ import java.util.Objects;
 @AllArgsConstructor
 public class Book_Copy {
 
-    @Column(nullable = false, name = "Book_ID")
+    @Column(nullable = false, name = "book_id")
     private long book_id;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, name = "Copy_ID")
+    @Column(nullable = false, name = "copy_id")
     private long copy_id;
 
     @Override

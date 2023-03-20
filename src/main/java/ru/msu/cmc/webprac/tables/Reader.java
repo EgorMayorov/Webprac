@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Reader")
+@Table(name = "reader")
 @Getter
 @Setter
 @ToString
@@ -16,34 +16,34 @@ import java.util.Objects;
 public class Reader {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, name = "Reader_ID")
+    @Column(nullable = false, name = "reader_id")
     private long reader_id;
 
-    @Column(nullable = false, name = "Name")
+    @Column(nullable = false, name = "name")
     @NonNull
     private String name;
 
-    @Column(nullable = false, name = "Surname")
+    @Column(nullable = false, name = "surname")
     @NonNull
     private String surname;
 
-    @Column(name = "Patronymic")
+    @Column(name = "patronymic")
     private String patronymic;
 
-    @Column(nullable = false, name = "Card_number")
+    @Column(nullable = false, name = "card_number")
     private long card_number;
 
-    @Column(nullable = false, name = "Card_date")
+    @Column(nullable = false, name = "card_date")
     @NonNull
     private Date card_date;
 
-    @Column(name = "Date_of_birth")
+    @Column(name = "date_of_birth")
     private Date date_of_birth;
 
-    @Column(name = "Address")
+    @Column(name = "address")
     private String address;
 
-    @Column(name = "Phone_number")
+    @Column(name = "phone_number")
     private long phone_number;
 
     @Override
