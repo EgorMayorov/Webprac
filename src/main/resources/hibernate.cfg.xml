@@ -6,9 +6,9 @@
     <session-factory>
         <!-- Database connection settings -->
         <property name="connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.url">jdbc:postgresql://localhost:5432/Webprac</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/postgres</property>
         <property name="connection.username">postgres</property>
-        <property name="connection.password"/>
+        <property name="connection.password">3853</property>
         <property name="show_sql">true</property>
 
         <mapping class="ru.msu.cmc.webprac.tables.Books"/>

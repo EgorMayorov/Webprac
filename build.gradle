@@ -23,6 +23,7 @@ dependencies {
 	implementation 'org.springframework:spring-orm:6.0.6'
 	implementation 'org.projectlombok:lombok:1.18.26'
 	implementation 'org.hibernate.orm:hibernate-core:6.1.7.Final'
+	implementation('org.hibernate.orm:hibernate-commons-annotations:6.0.6.Final')
 	implementation 'org.postgresql:postgresql:42.5.4'
 	compileOnly 'org.projectlombok:lombok:1.18.26'
 	annotationProcessor 'org.projectlombok:lombok'
