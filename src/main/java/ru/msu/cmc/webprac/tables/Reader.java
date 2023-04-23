@@ -3,6 +3,8 @@ package ru.msu.cmc.webprac.tables;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
@@ -11,12 +13,10 @@ import java.util.Objects;
 @Getter
 @Setter
 @ToString
-@NoArgsConstructor(force = true)
-@AllArgsConstructor
 public class Reader {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, name = "reader_id")
+    @Column(name = "reader_id")
     private long reader_id;
 
     @Column(nullable = false, name = "name")
@@ -30,7 +30,8 @@ public class Reader {
     @Column(name = "patronymic")
     private String patronymic;
 
-    @Column(nullable = false, name = "card_number")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "card_number")
     private long card_number;
 
     @Column(nullable = false, name = "card_date")
@@ -44,7 +45,28 @@ public class Reader {
     private String address;
 
     @Column(name = "phone_number")
-    private long phone_number;
+    private String phone_number;
+
+    public Reader(String name, String surname, String patronymic, String card_date, String date_of_birth,
+                  String address, String phone_number) {
+        setName(name);
+        setSurname(surname);
+        setPatronymic(patronymic);
+
+        try {
+            setCard_date(new SimpleDateFormat("dd-MM-yyyy").parse(card_date));
+            setDate_of_birth(new SimpleDateFormat("dd-MM-yyyy").parse(date_of_birth));
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+
+        setAddress(address);
+        setPhone_number(phone_number);
+    }
+
+    public Reader() {
+
+    }
 
     @Override
     public boolean equals(Object o) {

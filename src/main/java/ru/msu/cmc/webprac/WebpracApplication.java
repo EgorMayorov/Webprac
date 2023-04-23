@@ -6,6 +6,7 @@ import ru.msu.cmc.webprac.tables.Books;
 import ru.msu.cmc.webprac.tables.Reader;
 import ru.msu.cmc.webprac.tables.Records;
 import ru.msu.cmc.webprac.utils.DAOFactory;
+
 import java.util.List;
 
 @SpringBootApplication
@@ -23,5 +24,9 @@ public class WebpracApplication {
 		for(Books b:books) {
 			System.out.println(b.toString());
 		}
+		DAOFactory.getInstance().getReaderDAO().addReader(new Reader("Михаил", "Кочармин",
+				"Дмитриевич", "23-04-2023", "28-09-2002",
+				"ДСЛ МГУ", "879150000000"));
+
 	}
 }
