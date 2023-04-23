@@ -10,7 +10,6 @@ import java.util.Objects;
 @Getter
 @Setter
 @ToString
-@NoArgsConstructor
 @AllArgsConstructor
 public class Book_Copy {
 
@@ -23,9 +22,19 @@ public class Book_Copy {
     @Column(nullable = false, name = "copy_id")
     private long copy_id;
 
+    @Column(nullable = false, name = "is_taken_now")
+    @NonNull
+    private String is_taken_now;
+
     public Book_Copy(Books book){
         setBook_id(book);
+        setIs_taken_now("No");
     }
+
+    public Book_Copy() {
+
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
