@@ -2,7 +2,10 @@ package ru.msu.cmc.webprac.tables;
 
 import jakarta.persistence.*;
 import lombok.*;
+import ru.msu.cmc.webprac.utils.DAOFactory;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
@@ -31,10 +34,18 @@ public class Records {
     @NonNull
     private Date taking_date;
 
-    @Column(nullable = false, name = "returning_date")
-    @NonNull
+    @Column(name = "returning_date")
     private Date returning_date;
 
+    public Records(String reader_surname, String book_name){
+        setReader_id(DAOFactory.getInstance().getReaderDAO().getReaderBySurname(reader_surname));
+        Book_Copy copy = DAOFactory.getInstance().getCopyDAO().GetBookCopyByBookName(book_name);
+        setCopy_id(copy);
+        copy.setIs_taken_now("Yes");
+        DAOFactory.getInstance().getCopyDAO().updateCopy(copy);
+        Date current_date = new Date(System.currentTimeMillis());
+        setTaking_date(current_date);
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

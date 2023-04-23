@@ -6,5 +6,6 @@ public abstract class RecordsDAO {
     public abstract void addRecord(Records record);
     public abstract void deleteRecord(Records records);
     public abstract void updateRecord(Records records);
+    public abstract void returnBook(String surname, String book);
     public abstract Records getRecordById(Long id);
 }
