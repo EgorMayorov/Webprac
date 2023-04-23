@@ -10,7 +10,6 @@ import java.util.Objects;
 @Table(name = "books")
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor(force = true)
 @AllArgsConstructor
 public class Books {
@@ -57,5 +56,79 @@ public class Books {
                 && Objects.equals(amount, other.amount)
                 && genre.equals(other.genre)
                 && date_of_receiving.equals(other.date_of_receiving);
+    }
+
+
+    public long getBook_id() {
+        return book_id;
+    }
+
+    public void setBook_id(long book_id) {
+        this.book_id = book_id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getPublishing_house() {
+        return publishing_house;
+    }
+
+    public void setPublishing_house(String publishing_house) {
+        this.publishing_house = publishing_house;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public Date getDate_of_receiving() {
+        return date_of_receiving;
+    }
+
+    public void setDate_of_receiving(Date date_of_receiving) {
+        this.date_of_receiving = date_of_receiving;
+    }
+
+    @Override
+    public String toString() {
+        return "Books{" +
+                "name='" + name + '\'' +
+                ", author='" + author + '\'' +
+                ", about='" + about + '\'' +
+                '}';
     }
 }

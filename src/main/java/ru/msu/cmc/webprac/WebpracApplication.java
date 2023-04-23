@@ -12,16 +12,16 @@ import java.util.List;
 public class WebpracApplication {
 
 	public static void main(String[] args) {
-		//System.out.println("AAAAAa");
 		try {
 			SpringApplication.run(WebpracApplication.class, args);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		//System.out.println("AAAAAa");
 		List<Reader> oneName = DAOFactory.getInstance().getReaderDAO().getReaderBySurname("Пивоваров");
 		System.out.println(oneName);
 		List<Books> books = DAOFactory.getInstance().getReaderDAO().getReaderBooksBySurname("Пивоваров");
-		System.out.println(books);
+		for(Books b:books) {
+			System.out.println(b.toString());
+		}
 	}
 }

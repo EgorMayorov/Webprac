@@ -16,7 +16,6 @@ public class Book_Copy {
 
     @ManyToOne
     @JoinColumn(name = "book_id")
-//    @Column(nullable = false, name = "book_id")
     private Books book_id;
 
     @Id
