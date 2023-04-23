@@ -1,9 +1,11 @@
 package ru.msu.cmc.webprac.DAO.impl;
 
+import ru.msu.cmc.webprac.tables.Book_Copy;
 import ru.msu.cmc.webprac.tables.Books;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import ru.msu.cmc.webprac.DAO.BooksDAO;
+import ru.msu.cmc.webprac.utils.DAOFactory;
 
 import static ru.msu.cmc.webprac.utils.HibernateUtil.*;
 
@@ -12,6 +14,11 @@ public class BooksDAOImpl extends BooksDAO {
         Session session = getSessionFactory().openSession();
         session.beginTransaction();
         session.persist(book);
+        session.getTransaction().commit();
+        session.beginTransaction();
+        for(int i = 0; i < book.getAmount(); i++) {
+            DAOFactory.getInstance().getCopyDAO().addCopy(new Book_Copy(book));
+        }
         session.getTransaction().commit();
         session.close();
     }

@@ -28,8 +28,8 @@ public class WebpracApplication {
 //				"Дмитриевич", "23-04-2023", "28-09-2002",
 //				"ДСЛ МГУ", "879150000000"));
 
-//		DAOFactory.getInstance().getBooksDAO().addBook(new Books("Контакт", "Карл Саган",
-//				"Альпина нон-фикшн", 10, "роман", "21-04-2023"));
+		DAOFactory.getInstance().getBooksDAO().addBook(new Books("Контакт", "Карл Саган",
+				"Альпина нон-фикшн", 10, "роман", "21-04-2023"));
 
 //		Books book = DAOFactory.getInstance().getBooksDAO().getBookByName("Контакт");
 //		book.setAmount(15);
@@ -39,10 +39,10 @@ public class WebpracApplication {
 //		reader.setAddress("ГЗ МГУ");
 //		DAOFactory.getInstance().getReaderDAO().updateReader(reader);
 
-		Books book = DAOFactory.getInstance().getBooksDAO().getBookByName("Контакт");
-		DAOFactory.getInstance().getBooksDAO().deleteBook(book);
-
-		Reader reader = DAOFactory.getInstance().getReaderDAO().getReaderBySurname("Кочармин");
-		DAOFactory.getInstance().getReaderDAO().deleteReader(reader);
+//		Books book = DAOFactory.getInstance().getBooksDAO().getBookByName("Контакт");
+//		DAOFactory.getInstance().getBooksDAO().deleteBook(book);
+//
+//		Reader reader = DAOFactory.getInstance().getReaderDAO().getReaderBySurname("Кочармин");
+//		DAOFactory.getInstance().getReaderDAO().deleteReader(reader);
 	}
 }

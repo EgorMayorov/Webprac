@@ -23,6 +23,9 @@ public class Book_Copy {
     @Column(nullable = false, name = "copy_id")
     private long copy_id;
 
+    public Book_Copy(Books book){
+        setBook_id(book);
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
