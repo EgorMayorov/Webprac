@@ -37,8 +37,19 @@ public class BooksDAOImpl extends BooksDAO {
     @Override
     public Books getBookById(Long id) {
         Session session = getSessionFactory().openSession();
-        Query<Books> query = session.createQuery("FROM Books WHERE 'Book_ID' = :param", Books.class)
+        Query<Books> query = session.createQuery("FROM Books WHERE book_id = :param", Books.class)
                 .setParameter("param", id);
+        if (query.getResultList().size() == 0) {
+            return null;
+        }
+        return query.getResultList().get(0);
+    }
+
+    @Override
+    public Books getBookByName(String name) {
+        Session session = getSessionFactory().openSession();
+        Query<Books> query = session.createQuery("FROM Books WHERE name LIKE :param", Books.class)
+                .setParameter("param", name);
         if (query.getResultList().size() == 0) {
             return null;
         }

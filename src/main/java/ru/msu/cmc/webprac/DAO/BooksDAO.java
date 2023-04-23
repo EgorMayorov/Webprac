@@ -7,5 +7,5 @@ public abstract class BooksDAO {
     public abstract void deleteBook(Books book);
     public abstract void updateBook(Books book);
     public abstract Books getBookById(Long id);
-
+    public abstract Books getBookByName(String name);
 }
