@@ -15,6 +15,7 @@ CREATE TABLE books (
 CREATE TABLE book_copy (
                              "book_id" int not null ,
                              "copy_id" SERIAL,
+                             "is_taken_now" text,
                              PRIMARY KEY ("copy_id")
 );
 
@@ -23,7 +24,7 @@ CREATE TABLE records (
                            "reader_id" int not null ,
                            "copy_id" int not null ,
                            "taking_date" date not null ,
-                           "returning_date" date not null ,
+                           "returning_date" date ,
                            PRIMARY KEY ("record_id")
 );
 
