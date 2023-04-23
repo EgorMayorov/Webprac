@@ -14,8 +14,10 @@ import java.util.Objects;
 @AllArgsConstructor
 public class Book_Copy {
 
-    @Column(nullable = false, name = "book_id")
-    private long book_id;
+    @ManyToOne
+    @JoinColumn(name = "book_id")
+//    @Column(nullable = false, name = "book_id")
+    private Books book_id;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -19,11 +19,13 @@ public class Records {
     @Column(nullable = false, name = "record_id")
     private long record_id;
 
-    @Column(nullable = false, name = "reader_id")
-    private long reader_id;
+    @ManyToOne
+    @JoinColumn(nullable = false, name = "reader_id")
+    private Reader reader_id;
 
-    @Column(nullable = false, name = "copy_id")
-    private long copy_id;
+    @ManyToOne
+    @JoinColumn(nullable = false, name = "copy_id")
+    private Book_Copy copy_id;
 
     @Column(nullable = false, name = "taking_date")
     @NonNull

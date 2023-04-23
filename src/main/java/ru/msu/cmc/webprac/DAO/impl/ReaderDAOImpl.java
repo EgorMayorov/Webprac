@@ -3,7 +3,9 @@ package ru.msu.cmc.webprac.DAO.impl;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import ru.msu.cmc.webprac.DAO.ReaderDAO;
+import ru.msu.cmc.webprac.tables.Books;
 import ru.msu.cmc.webprac.tables.Reader;
+import ru.msu.cmc.webprac.tables.Records;
 import ru.msu.cmc.webprac.utils.HibernateUtil;
 
 import java.util.List;
@@ -48,11 +50,28 @@ public class ReaderDAOImpl extends ReaderDAO {
         return query.getResultList().get(0);
     }
 
-    public List<Reader> getReaderBySurame(String surname) {
+    public List<Reader> getReaderBySurname(String surname) {
         java.util.List<Reader> result = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         Query<Reader> query = session.createQuery("FROM Reader WHERE surname LIKE :surname", Reader.class)
                 .setParameter("surname", "%" + surname + "%");
+        if (query.getResultList().size() != 0) {
+            result = query.getResultList();
+        }
+        return result;
+    }
+
+    public List<Books> getReaderBooksBySurname(String surname) {
+        java.util.List<Books> result = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Query<Books> query = session.createQuery("Select DISTINCT bok " +
+                        "FROM Records rec " +
+                        "left join rec.reader_id read " +
+                        "left join rec.copy_id cop " +
+                        "left join cop.book_id bok " +
+                        "Where read.surname LIKE :surname", Books.class)
+                .setParameter("surname", "%" + surname + "%");
+//                .setParameter("surname", "%" + surname + "%");
         if (query.getResultList().size() != 0) {
             result = query.getResultList();
         }
