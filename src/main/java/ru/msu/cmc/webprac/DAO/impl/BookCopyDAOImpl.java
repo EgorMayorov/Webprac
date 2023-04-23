@@ -16,14 +16,14 @@ public class BookCopyDAOImpl extends BookCopyDAO {
         session.close();
     }
 
-//    @Override
-//    public void updateCopy(Book_Copy copy) {
-//        Session session = getSessionFactory().openSession();
-//        session.beginTransaction();
-//        session.merge(copy);
-//        session.getTransaction().commit();
-//        session.close();
-//    }
+    @Override
+    public void updateCopy(Book_Copy copy) {
+        Session session = getSessionFactory().openSession();
+        session.beginTransaction();
+        session.merge(copy);
+        session.getTransaction().commit();
+        session.close();
+    }
 
     @Override
     public void deleteCopy(Book_Copy copy) {
@@ -35,9 +35,24 @@ public class BookCopyDAOImpl extends BookCopyDAO {
     }
 
     @Override
+    public Book_Copy GetBookCopyByBookName(String name){
+        Session session = getSessionFactory().openSession();
+        Query<Book_Copy> query = session.createQuery("Select cp " +
+                        "FROM Book_Copy cp " +
+                        "LEFT JOIN cp.book_id bok " +
+                        "WHERE cp.is_taken_now LIKE 'No' " +
+                        "and bok.name LIKE :param",
+                Book_Copy.class).setParameter("param", name);
+        if (query.getResultList().size() == 0) {
+            return null;
+        }
+        return query.getResultList().get(0);
+    }
+
+    @Override
     public Book_Copy getCopyById(Long id) {
         Session session = getSessionFactory().openSession();
-        Query<Book_Copy> query = session.createQuery("FROM Book_Copy WHERE 'Copy_ID' = :param",
+        Query<Book_Copy> query = session.createQuery("FROM Book_Copy WHERE copy_id = :param",
                         Book_Copy.class).setParameter("param", id);
         if (query.getResultList().size() == 0) {
             return null;
