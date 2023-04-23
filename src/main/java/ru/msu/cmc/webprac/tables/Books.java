@@ -3,6 +3,8 @@ package ru.msu.cmc.webprac.tables;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
@@ -44,6 +46,34 @@ public class Books {
     @NonNull
     private Date date_of_receiving;
 
+    public Books(String name, String author, String publishing_house, int amount,
+                 String about, String genre, String date_of_receiving){
+        setName(name);
+        setAuthor(author);
+        setPublishing_house(publishing_house);
+        setAmount(amount);
+        setAbout(about);
+        setGenre(genre);
+        try {
+            setDate_of_receiving(new SimpleDateFormat("dd-MM-yyyy").parse(date_of_receiving));
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Books(String name, String author, String publishing_house, int amount,
+                 String genre, String date_of_receiving){
+        setName(name);
+        setAuthor(author);
+        setPublishing_house(publishing_house);
+        setAmount(amount);
+        setGenre(genre);
+        try {
+            setDate_of_receiving(new SimpleDateFormat("dd-MM-yyyy").parse(date_of_receiving));
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

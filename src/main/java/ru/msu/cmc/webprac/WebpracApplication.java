@@ -24,9 +24,10 @@ public class WebpracApplication {
 		for(Books b:books) {
 			System.out.println(b.toString());
 		}
-		DAOFactory.getInstance().getReaderDAO().addReader(new Reader("Михаил", "Кочармин",
-				"Дмитриевич", "23-04-2023", "28-09-2002",
-				"ДСЛ МГУ", "879150000000"));
-
+//		DAOFactory.getInstance().getReaderDAO().addReader(new Reader("Михаил", "Кочармин",
+//				"Дмитриевич", "23-04-2023", "28-09-2002",
+//				"ДСЛ МГУ", "879150000000"));
+		DAOFactory.getInstance().getBooksDAO().addBook(new Books("Контакт", "Карл Саган",
+				"Альпина нон-фикшн", 10, "роман", "21-04-2023"));
 	}
 }
