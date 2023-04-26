@@ -1,15 +1,17 @@
 package ru.msu.cmc.webprac.tests;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.internal.matchers.Null;
 import org.springframework.boot.test.context.SpringBootTest;
+import ru.msu.cmc.webprac.tables.Book_Copy;
 import ru.msu.cmc.webprac.tables.Books;
 import ru.msu.cmc.webprac.tables.Reader;
+import ru.msu.cmc.webprac.tables.Records;
 import ru.msu.cmc.webprac.utils.DAOFactory;
 
 import org.junit.jupiter.api.*;
 
-import java.awt.print.Book;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -116,5 +118,53 @@ class WebpracApplicationTests {
 		book = DAOFactory.getInstance().getBooksDAO().getBookByName("Контакт1");
 		assertEquals("Не про соцсеть", book.getAbout());
 		DAOFactory.getInstance().getBooksDAO().deleteBook(book);
+	}
+
+	@Test
+	public void updateCopyTest () {
+		Book_Copy copy = DAOFactory.getInstance().getCopyDAO().GetBookCopyByBookName("Книга");
+		copy.setIs_taken_now("Yes");
+		DAOFactory.getInstance().getCopyDAO().updateCopy(copy);
+		assertEquals("Yes", copy.getIs_taken_now());
+		copy.setIs_taken_now("No");
+		DAOFactory.getInstance().getCopyDAO().updateCopy(copy);
+	}
+
+	@Test
+	public void getBookCopyByBookNameTest () {
+		Book_Copy copy = DAOFactory.getInstance().getCopyDAO().GetBookCopyByBookName("Книга");
+		assertNotNull(copy);
+	}
+
+	@Test
+	public void getCopyByIDTest () {
+		Book_Copy copy = DAOFactory.getInstance().getCopyDAO().getCopyById(301L);
+		assertNotNull(copy);
+	}
+
+	@Test
+	public void getRecordByIdTest () {
+		Records record = DAOFactory.getInstance().getRecordsDAO().getRecordById(1L);
+		assertNotNull(record);
+	}
+
+	@Test
+	public void returnBookTest () {
+		DAOFactory.getInstance().getRecordsDAO().addRecord(new Records("Кочармин",
+				"Книга"));
+		Records record = DAOFactory.getInstance().getRecordsDAO().returnBook("Кочармин",
+				"Книга");
+		Date current_date = new Date(System.currentTimeMillis());
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy");
+		assertEquals(sdf.format(current_date), sdf.format(record.getReturning_date()));
+	}
+
+	@Test
+	public void deleteCopyTest () {
+		Long id = 66L;
+		Book_Copy copy = DAOFactory.getInstance().getCopyDAO().getCopyById(id);
+		DAOFactory.getInstance().getCopyDAO().deleteCopy(copy);
+		copy = DAOFactory.getInstance().getCopyDAO().getCopyById(id);
+		assertNull(copy);
 	}
 }
