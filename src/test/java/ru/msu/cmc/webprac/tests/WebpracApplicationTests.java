@@ -26,10 +26,14 @@ class WebpracApplicationTests {
 		DAOFactory.getInstance().getReaderDAO().deleteReader(DAOFactory.getInstance().getReaderDAO().getReaderBySurname("Кочармин"));
 		Reader reader = DAOFactory.getInstance().getReaderDAO().getReaderBySurname("Кочармин");
 		assertNull(reader);
+		DAOFactory.getInstance().getReaderDAO().addReader(new Reader("Михаил", "Кочармин",
+				"Дмитриевич", "23-04-2023", "28-09-2002",
+				"ДСЛ МГУ", "879150000000"));
 	}
 
 	@Test
 	public void addReaderTest () {
+		DAOFactory.getInstance().getReaderDAO().deleteReader(DAOFactory.getInstance().getReaderDAO().getReaderBySurname("Кочармин"));
 		DAOFactory.getInstance().getReaderDAO().addReader(new Reader("Михаил", "Кочармин",
 				"Дмитриевич", "23-04-2023", "28-09-2002",
 				"ДСЛ МГУ", "879150000000"));
@@ -51,7 +55,7 @@ class WebpracApplicationTests {
 
 	@Test
 	public void getBookByNameTest () {
-		Books book = DAOFactory.getInstance().getBooksDAO().getBookByName("Контакт");
+		Books book = DAOFactory.getInstance().getBooksDAO().getBookByName("Приключения Эраста Фандорина. Азазель");
 		assertNotNull(book);
 	}
 
@@ -67,10 +71,14 @@ class WebpracApplicationTests {
 				"Альпина нон-фикшн", 10, "роман", "21-04-2023"));
 		Books book = DAOFactory.getInstance().getBooksDAO().getBookByName("Контакт");
 		assertNotNull(book);
+		book = DAOFactory.getInstance().getBooksDAO().getBookByName("Контакт");
+		DAOFactory.getInstance().getBooksDAO().deleteBook(book);
 	}
 
 	@Test
 	public void deleteBookTest () {
+		DAOFactory.getInstance().getBooksDAO().addBook(new Books("Контакт", "Карл Саган",
+				"Альпина нон-фикшн", 10, "роман", "21-04-2023"));
 		Books book = DAOFactory.getInstance().getBooksDAO().getBookByName("Контакт");
 		DAOFactory.getInstance().getBooksDAO().deleteBook(book);
 		book = DAOFactory.getInstance().getBooksDAO().getBookByName("Контакт");
@@ -87,5 +95,26 @@ class WebpracApplicationTests {
 	public void getBooksReaders () {
 		List<Reader> readers = DAOFactory.getInstance().getBooksDAO().getReadersByBook("Приключения Эраста Фандорина. Азазель");
 		assertNotNull(readers);
+	}
+
+	@Test
+	public void updateReaderTest () {
+		Reader reader = DAOFactory.getInstance().getReaderDAO().getReaderBySurname("Кочармин");
+		reader.setAddress("ГЗ МГУ");
+		DAOFactory.getInstance().getReaderDAO().updateReader(reader);
+		reader = DAOFactory.getInstance().getReaderDAO().getReaderBySurname("Кочармин");
+		assertEquals("ГЗ МГУ", reader.getAddress());
+	}
+
+	@Test
+	public void updateBookTest () {
+		DAOFactory.getInstance().getBooksDAO().addBook(new Books("Контакт1", "Карл Саган AAA",
+				"Альпина нон-фикшн AAA", 10, "роман AAA", "21-04-2023"));
+		Books book = DAOFactory.getInstance().getBooksDAO().getBookByName("Контакт1");
+		book.setAbout("Не про соцсеть");
+		DAOFactory.getInstance().getBooksDAO().updateBook(book);
+		book = DAOFactory.getInstance().getBooksDAO().getBookByName("Контакт1");
+		assertEquals("Не про соцсеть", book.getAbout());
+		DAOFactory.getInstance().getBooksDAO().deleteBook(book);
 	}
 }
