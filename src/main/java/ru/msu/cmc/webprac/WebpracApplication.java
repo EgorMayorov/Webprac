@@ -49,16 +49,16 @@ public class WebpracApplication {
 
 //		DAOFactory.getInstance().getRecordsDAO().addRecord(new Records("Кочармин", "Контакт"));
 
-		List<Books> books1 = DAOFactory.getInstance().getReaderDAO().getReaderBooksBySurname("Кочармин");
-		for(Books b:books1) {
-			System.out.println(b.toString());
-		}
+//		List<Books> books1 = DAOFactory.getInstance().getReaderDAO().getReaderBooksBySurname("Кочармин");
+//		for(Books b:books1) {
+//			System.out.println(b.toString());
+//		}
 
 //		DAOFactory.getInstance().getRecordsDAO().returnBook("Кочармин", "Контакт");
 
-		List<Reader> readers = DAOFactory.getInstance().getBooksDAO().getReadersByBook("Приключения Эраста Фандорина. Азазель");
-		for(Reader r:readers) {
-			System.out.println(r.toString());
-		}
+//		List<Reader> readers = DAOFactory.getInstance().getBooksDAO().getReadersByBook("Приключения Эраста Фандорина. Азазель");
+//		for(Reader r:readers) {
+//			System.out.println(r.toString());
+//		}
 	}
 }
