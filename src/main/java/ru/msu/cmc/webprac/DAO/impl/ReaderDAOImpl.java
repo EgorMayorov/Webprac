@@ -41,13 +41,14 @@ public class ReaderDAOImpl extends ReaderDAO {
 
     @Override
     public Reader getReaderById(Long id) {
+        Reader result = null;
         Session session = getSessionFactory().openSession();
-        Query<Reader> query = session.createQuery("FROM Reader WHERE 'Reader_ID' = :param", Reader.class)
+        Query<Reader> query = session.createQuery("FROM Reader WHERE reader_id = :param", Reader.class)
                 .setParameter("param", id);
-        if (query.getResultList().size() == 0) {
-            return null;
+        if (query.getResultList().size() != 0) {
+            result = query.getSingleResult();
         }
-        return query.getResultList().get(0);
+        return result;
     }
 
     public Reader getReaderBySurname(String surname) {
