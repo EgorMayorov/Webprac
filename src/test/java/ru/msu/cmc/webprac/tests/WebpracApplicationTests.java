@@ -155,13 +155,13 @@ class WebpracApplicationTests {
 		Records record = DAOFactory.getInstance().getRecordsDAO().returnBook("Кочармин",
 				"Книга");
 		Date current_date = new Date(System.currentTimeMillis());
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 		assertEquals(sdf.format(current_date), sdf.format(record.getReturning_date()));
 	}
 
 	@Test
 	public void deleteCopyTest () {
-		Long id = 66L;
+		Long id = 67L;	// correct value before running tests (+1)
 		Book_Copy copy = DAOFactory.getInstance().getCopyDAO().getCopyById(id);
 		DAOFactory.getInstance().getCopyDAO().deleteCopy(copy);
 		copy = DAOFactory.getInstance().getCopyDAO().getCopyById(id);
