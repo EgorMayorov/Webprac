@@ -12,10 +12,10 @@ import java.util.Date;
 import static ru.msu.cmc.webprac.utils.HibernateUtil.getSessionFactory;
 
 public class RecordsDAOImpl extends RecordsDAO {
-    public void addRecord(Records Records) {
+    public void addRecord(Records record) {
         Session session = getSessionFactory().openSession();
         session.beginTransaction();
-        session.persist(Records);
+        session.persist(record);
         session.getTransaction().commit();
         session.close();
     }
@@ -29,17 +29,17 @@ public class RecordsDAOImpl extends RecordsDAO {
         session.close();
     }
 
-    @Override
-    public void deleteRecord(Records record) {
-        Session session = getSessionFactory().openSession();
-        session.beginTransaction();
-        session.remove(record);
-        session.getTransaction().commit();
-        session.close();
-    }
+//    @Override
+//    public void deleteRecord(Records record) {
+//        Session session = getSessionFactory().openSession();
+//        session.beginTransaction();
+//        session.remove(record);
+//        session.getTransaction().commit();
+//        session.close();
+//    }
 
     @Override
-    public void returnBook(String surname, String book){
+    public Records returnBook(String surname, String book){
         Session session = getSessionFactory().openSession();
         Query<Records> query = session.createQuery("SELECT rec " +
                 "FROM Records rec " +
@@ -66,15 +66,17 @@ public class RecordsDAOImpl extends RecordsDAO {
         copy.setIs_taken_now("No");
         DAOFactory.getInstance().getCopyDAO().updateCopy(copy);
         DAOFactory.getInstance().getRecordsDAO().updateRecord(record);
+        return record;
     }
     @Override
     public Records getRecordById(Long id) {
+        Records result = null;
         Session session = getSessionFactory().openSession();
-        Query<Records> query = session.createQuery("FROM Records WHERE 'Record_ID' = :param", Records.class)
+        Query<Records> query = session.createQuery("FROM Records WHERE record_id = :param", Records.class)
                 .setParameter("param", id);
-        if (query.getResultList().size() == 0) {
-            return null;
+        if (query.getResultList().size() != 0) {
+            result = query.getResultList().get(0);
         }
-        return query.getResultList().get(0);
+        return result;
     }
 }

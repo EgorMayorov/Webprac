@@ -36,27 +36,29 @@ public class BookCopyDAOImpl extends BookCopyDAO {
 
     @Override
     public Book_Copy GetBookCopyByBookName(String name){
+        Book_Copy result = null;
         Session session = getSessionFactory().openSession();
         Query<Book_Copy> query = session.createQuery("Select cp " +
                         "FROM Book_Copy cp " +
                         "LEFT JOIN cp.book_id bok " +
                         "WHERE cp.is_taken_now LIKE 'No' " +
-                        "and bok.name LIKE :param",
-                Book_Copy.class).setParameter("param", name);
-        if (query.getResultList().size() == 0) {
-            return null;
+                        "and bok.name LIKE :param", Book_Copy.class)
+                .setParameter("param", name);
+        if (query.getResultList().size() != 0) {
+            result = query.getResultList().get(0);
         }
-        return query.getResultList().get(0);
+        return result;
     }
 
     @Override
     public Book_Copy getCopyById(Long id) {
+        Book_Copy copy = null;
         Session session = getSessionFactory().openSession();
         Query<Book_Copy> query = session.createQuery("FROM Book_Copy WHERE copy_id = :param",
                         Book_Copy.class).setParameter("param", id);
-        if (query.getResultList().size() == 0) {
-            return null;
+        if (query.getResultList().size() != 0) {
+            copy = query.getSingleResult();
         }
-        return query.getResultList().get(0);
+        return copy;
     }
 }
