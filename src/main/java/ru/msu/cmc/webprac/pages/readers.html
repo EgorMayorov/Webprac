@@ -1,0 +1,34 @@
+{% extends "main.html" %}
+
+{% block title %}Читатели{% end-block %}
+
+{% block content %}
+
+<body>
+<h1>Читатели</h1>
+<table>
+  <tr>
+    <th>Имя</th>
+    <th>Фамилия</th>
+    <th>Отчество</th>
+    <th>Номер читательского билета</th>
+    <th>Дата регистрации</th>
+    <th>Дата рождения</th>
+    <th>Адрес</th>
+    <th>Номер телефона</th>
+  </tr>
+  <tr th:each="rd : ${readerList}">
+    <td th:text="${rd.name}">Иван</td>
+    <td th:text="${rd.surname}">Иванович</td>
+    <td th:text="${rd.patronymic}">Иванов</td>
+    <td th:text="${rd.card_number}">1000000</td>
+    <td th:text="${rd.card_date}">01-01-1990</td>
+    <td th:text="${rd.date_of_birth}">01-01-1970</td>
+    <td th:text="${rd.address}">Москва</td>
+    <td th:text="${rd.phone_number}">89100000000</td>
+  </tr>
+</table>
+<p>
+  <a href="./start_page.html" th:href="@{/}">Назад</a>
+</p>
+</body>
