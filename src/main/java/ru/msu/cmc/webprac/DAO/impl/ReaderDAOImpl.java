@@ -51,6 +51,7 @@ public class ReaderDAOImpl extends ReaderDAO {
         return result;
     }
 
+    @Override
     public Reader getReaderBySurname(String surname) {
         Reader result = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -62,6 +63,7 @@ public class ReaderDAOImpl extends ReaderDAO {
         return result;
     }
 
+    @Override
     public List<Books> getReaderBooksBySurname(String surname) {
         java.util.List<Books> result = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -73,6 +75,17 @@ public class ReaderDAOImpl extends ReaderDAO {
                         "Where read.surname LIKE :surname", Books.class)
                 .setParameter("surname", "%" + surname + "%");
 //                .setParameter("surname", "%" + surname + "%");
+        if (query.getResultList().size() != 0) {
+            result = query.getResultList();
+        }
+        return result;
+    }
+
+    @Override
+    public List<Reader> getAllReader() {
+        List<Reader> result = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Query<Reader> query = session.createQuery("FROM Reader", Reader.class);
         if (query.getResultList().size() != 0) {
             result = query.getResultList();
         }
