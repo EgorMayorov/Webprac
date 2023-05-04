@@ -1,12 +1,35 @@
-{% extends "main.html" %}
+<!doctype html>
 
-{% block title %}Читатели{% end-block %}
+<html lang="ru">
 
-{% block content %}
+<head>
+  <meta charset='utf-8'>
+  <title>{% block title %}{% end-block %}</title>
+  <style>
+    body {
+      font-family: 'modern',sans-serif;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<style>
+  .button {
+    background-color: #77DD77;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 20px;
+    padding: 20px 35px;
+  }
+</style>
 
 <body>
+<div style="text-align: center;">
 <h1>Читатели</h1>
-<table>
+<table align="center" border="1" cellpadding="5">
   <tr>
     <th>Имя</th>
     <th>Фамилия</th>
@@ -29,6 +52,8 @@
   </tr>
 </table>
 <p>
-  <a href="start_page.html" th:href="@{/}">Назад</a>
+  <a class="button" href="start_page.html" th:href="@{/}">Назад</a>
 </p>
+</div>
 </body>
+</html>

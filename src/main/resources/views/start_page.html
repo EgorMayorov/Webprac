@@ -1,22 +1,32 @@
-{% extends "main.html" %}
+<!doctype html>
 
-{% block title %}Библиотека{% end-block %}
+<html lang="ru">
 
-{% block content %}
+<head>
+  <meta charset='utf-8'>
+  <title>{% block title %}{% end-block %}</title>
+  <style>
+    body {
+      font-family: 'modern',sans-serif;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
 <style>
   .button {
     background-color: #77DD77;
     text-align: center;
     font-weight: bold;
     border: none;
-    border-radius: 10px;
+    border-radius: 6px;
     display: inline-block;
-    font-size: 50px;
-    padding: 40px 60px;
+    font-size: 20px;
+    padding: 20px 35px;
   }
 </style>
 
-
+<body>
 <div style="text-align: center;">
   <h1>Библиотека</h1>
 
@@ -26,6 +36,8 @@
   <br>
   <br>
   <br>
-  <a class="button" th:href="@{/readers}">Читатели</a>
+  <a class="button" href="readers.html" th:href="@{/readers}">Читатели</a>
 </div>
-{% end-block %}
+</body>
+
+</html>
