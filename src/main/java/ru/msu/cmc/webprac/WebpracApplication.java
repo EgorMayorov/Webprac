@@ -13,6 +13,7 @@ import java.util.List;
 public class WebpracApplication {
 
 	public static void main(String[] args) {
+
 		try {
 			SpringApplication.run(WebpracApplication.class, args);
 		} catch (Exception e) {
@@ -58,7 +59,7 @@ public class WebpracApplication {
 
 //		List<Reader> readers = DAOFactory.getInstance().getBooksDAO().getReadersByBook("Приключения Эраста Фандорина. Азазель");
 //		for(Reader r:readers) {
-//			System.out.println(r.toString());
+			System.out.println("Here!");
 //		}
 	}
 }

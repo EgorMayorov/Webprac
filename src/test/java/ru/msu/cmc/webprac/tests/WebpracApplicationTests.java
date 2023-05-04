@@ -161,7 +161,7 @@ class WebpracApplicationTests {
 
 	@Test
 	public void deleteCopyTest () {
-		Long id = 67L;	// correct value before running tests (+1)
+		Long id = 68L;	// correct value before running tests (+1)
 		Book_Copy copy = DAOFactory.getInstance().getCopyDAO().getCopyById(id);
 		DAOFactory.getInstance().getCopyDAO().deleteCopy(copy);
 		copy = DAOFactory.getInstance().getCopyDAO().getCopyById(id);

@@ -15,10 +15,11 @@ import java.util.List;
 public class MainController {
 //    @Autowired
 //    private final ReaderDAO readerDAO = new ReaderDAOImpl();
-    @GetMapping("/")
-    public String index() {
-        return "start_page";
-    }
+
+//    @GetMapping("/")
+//    public String index() {
+//        return "start_page";
+//    }
 
     @GetMapping("/readers")
     public String showReaders (Model model) {
