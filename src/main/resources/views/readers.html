@@ -24,7 +24,7 @@
     font-size: 20px;
     padding: 20px 35px;
   }
-  .button1 {
+  .mini_button {
     background-color: #77DD77;
     text-align: center;
     font-weight: normal;
@@ -40,7 +40,7 @@
   <center>
     <form role="search" method="post">
       <input class="form-control" type="search" placeholder="Search Reader" aria-label="Search" name="search_reader">
-      <button type="button" class="button1"><a href="/readers" class="nav-link px-2 text-secondary">Обновить</a></button>
+      <button type="button" class="mini_button"><a href="/readers" class="nav-link px-2 text-secondary">Обновить</a></button>
     </form>
   </center>
 </div>
@@ -50,26 +50,31 @@
 <h1>Читатели</h1>
 <table align="center" border="1" cellpadding="5">
   <tr>
-    <th>Имя</th>
     <th>Фамилия</th>
+    <th>Имя</th>
     <th>Отчество</th>
     <th>Номер читательского билета</th>
-    <th>Дата регистрации</th>
-    <th>Дата рождения</th>
-    <th>Адрес</th>
-    <th>Номер телефона</th>
-    <th>Список прочитанных книг</th>
+<!--    <th>Дата регистрации</th>-->
+<!--    <th>Дата рождения</th>-->
+<!--    <th>Адрес</th>-->
+<!--    <th>Номер телефона</th>-->
+    <th>Информация о пользователе</th>
   </tr>
   <tr th:each="rd : ${readerList}">
-    <td th:text="${rd.name}">Иван</td>
     <td th:text="${rd.surname}">Иванович</td>
+    <td th:text="${rd.name}">Иван</td>
     <td th:text="${rd.patronymic}">Иванов</td>
     <td th:text="${rd.card_number}">1000000</td>
-    <td th:text="${rd.card_date}">01-01-1990</td>
-    <td th:text="${rd.date_of_birth}">01-01-1970</td>
-    <td th:text="${rd.address}">Москва</td>
-    <td th:text="${rd.phone_number}">89100000000</td>
-    <td><button type="button" class="button1"><a href="/reader_info" class="nav-link px-2 text-secondary">Список книг</a></button></td>
+<!--    <td th:text="${rd.card_date}">01-01-1990</td>-->
+<!--    <td th:text="${rd.date_of_birth}">01-01-1970</td>-->
+<!--    <td th:text="${rd.address}">Москва</td>-->
+<!--    <td th:text="${rd.phone_number}">89100000000</td>-->
+    <td>
+      <form th:action="@{/reader_info}" method="post">
+        <input type="hidden" name="reader_surname" th:attr="value=${rd.surname}">
+        <button type="submit" class="mini_button">Информация</button>
+      </form>
+    </td>
   </tr>
 </table>
 <p>

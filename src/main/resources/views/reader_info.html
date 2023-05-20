@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html lang="ru">
+
+<head>
+    <meta charset='utf-8'>
+    <title>Readers</title>
+    <style>
+        body {
+            font-family: 'modern',sans-serif;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<style>
+    .button {
+        background-color: #77DD77;
+        text-align: center;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        display: inline-block;
+        font-size: 20px;
+        padding: 20px 35px;
+    }
+</style>
+
+<body>
+<div style="text-align: center;">
+    <h1>Информация о читателе</h1>
+    <table align="center" border="1" cellpadding="5">
+        <tr><td>Фамилия</td><td th:text="${reader_info.surname}">Иван</td></tr>
+        <tr><td>Имя</td><td th:text="${reader_info.name}">Иванович</td></tr>
+        <tr><td>Отчество</td><td th:text="${reader_info.patronymic}">Иванов</td></tr>
+        <tr><td>Дата рождения</td><td th:text="${reader_info.date_of_birth}">01-01-1970</td></tr>
+        <tr><td>Номер читательского<br>билета</td><td th:text="${reader_info.card_number}">1000000</td></tr>
+        <tr><td>Дата регистрации</td><td th:text="${reader_info.card_date}">01-01-1990</td></tr>
+        <tr><td>Адрес проживания</td><td th:text="${reader_info.address}">Москва</td></tr>
+        <tr><td>Номер телефона</td><td th:text="${reader_info.phone_number}">89100000000</td></tr>
+    </table>
+    <p>
+        <form th:action="@{/reader_books}" method="post">
+            <input type="hidden" name="reader_surname" th:attr="value=${reader_info.surname}">
+            <button type="submit" class="button">Список книг</button>
+        </form>
+<!--        <a class="button" href="start_page.html" th:href="@{/}">Список книг</a>-->
+    </p>
+    <p>
+        <a class="button" href="readers.html" th:href="@{/readers}">Назад</a>
+    </p>
+    <p>
+        <a class="button" href="start_page.html" th:href="@{/}">На главную</a>
+    </p>
+</div>
+</body>
+</html>
