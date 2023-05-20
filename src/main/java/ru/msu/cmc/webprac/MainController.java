@@ -90,7 +90,7 @@ public class MainController {
     }
 
     @PostMapping("/add_reader")
-    public String addReader (Model model, @RequestParam(name = "reader_name", required = false) String reader_name,
+    public String addReader (@RequestParam(name = "reader_name", required = false) String reader_name,
                              @RequestParam(name = "reader_surname", required = false) String reader_surname,
                              @RequestParam(name = "reader_patronymic", required = false) String reader_patronymic,
                              @RequestParam(name = "reader_birth", required = false) String reader_birth,
@@ -102,5 +102,25 @@ public class MainController {
                 formatted_date, reader_birth, reader_address, reader_phone);
         DAOFactory.getInstance().getReaderDAO().addReader(reader);
         return "add_reader";
+    }
+
+    @GetMapping("/add_book")
+    public String addBookShow () {
+        return "add_book";
+    }
+
+    @PostMapping("/add_book")
+    public String addBook (@RequestParam(name = "book_name", required = false) String book_name,
+                           @RequestParam(name = "book_author", required = false) String book_author,
+                           @RequestParam(name = "book_publisher", required = false) String book_publisher,
+                           @RequestParam(name = "book_genre", required = false) String book_genre,
+                           @RequestParam(name = "book_amount", required = false) int book_amount,
+                           @RequestParam(name = "book_about", required = false) String book_about) {
+        SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd");
+        String formatted_date = formatDate.format(new Date());
+        Books book = new Books(book_name, book_author, book_publisher, book_amount,
+                book_about, book_genre, formatted_date);
+        DAOFactory.getInstance().getBooksDAO().addBook(book);
+        return "add_book";
     }
 }
