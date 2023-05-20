@@ -55,7 +55,7 @@ public class Books {
         setAbout(about);
         setGenre(genre);
         try {
-            setDate_of_receiving(new SimpleDateFormat("dd-MM-yyyy").parse(date_of_receiving));
+            setDate_of_receiving(new SimpleDateFormat("yyyy-MM-dd").parse(date_of_receiving));
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
