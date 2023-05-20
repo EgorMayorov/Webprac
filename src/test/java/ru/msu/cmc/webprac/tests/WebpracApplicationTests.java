@@ -8,8 +8,6 @@ import ru.msu.cmc.webprac.tables.Reader;
 import ru.msu.cmc.webprac.tables.Records;
 import ru.msu.cmc.webprac.utils.DAOFactory;
 
-import org.junit.jupiter.api.*;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;

@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 import ru.msu.cmc.webprac.utils.DAOFactory;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 

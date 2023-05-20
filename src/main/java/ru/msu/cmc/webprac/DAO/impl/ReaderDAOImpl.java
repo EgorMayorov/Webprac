@@ -5,7 +5,6 @@ import org.hibernate.query.Query;
 import ru.msu.cmc.webprac.DAO.ReaderDAO;
 import ru.msu.cmc.webprac.tables.Books;
 import ru.msu.cmc.webprac.tables.Reader;
-import ru.msu.cmc.webprac.tables.Records;
 import ru.msu.cmc.webprac.utils.HibernateUtil;
 
 import java.util.List;
