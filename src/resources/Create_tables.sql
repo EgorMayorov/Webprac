@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS books, book_copy, records, reader;
+DROP SEQUENCE IF EXISTS reader_card_number;
 
 CREATE TABLE books (
                          "book_id" SERIAL,
@@ -28,15 +29,21 @@ CREATE TABLE records (
                            PRIMARY KEY ("record_id")
 );
 
+CREATE SEQUENCE reader_card_number;
+ALTER SEQUENCE reader_card_number RESTART WITH 1000001;
+
 CREATE TABLE reader (
                           "reader_id" SERIAL,
                           "name" text not null ,
-                          "surname" text not null ,
+                          "surname" text not null unique ,
                           "patronymic" text,
-                          "card_number" int not null unique ,
+                          "card_number" int not null default nextval('reader_card_number'),
                           "card_date" date not null ,
                           "date_of_birth" date,
                           "address" text,
                           "phone_number" varchar,
                           PRIMARY KEY ("reader_id")
 );
+
+ALTER SEQUENCE reader_card_number
+    OWNED BY reader.card_number;
