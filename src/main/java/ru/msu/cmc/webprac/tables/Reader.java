@@ -50,8 +50,8 @@ public class Reader {
         setPatronymic(patronymic);
 
         try {
-            setCard_date(new SimpleDateFormat("dd-MM-yyyy").parse(card_date));
-            setDate_of_birth(new SimpleDateFormat("dd-MM-yyyy").parse(date_of_birth));
+            setCard_date(new SimpleDateFormat("yyyy-MM-dd").parse(card_date));
+            setDate_of_birth(new SimpleDateFormat("yyyy-MM-dd").parse(date_of_birth));
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
