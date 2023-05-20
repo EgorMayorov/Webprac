@@ -9,6 +9,8 @@ import ru.msu.cmc.webprac.tables.Books;
 import ru.msu.cmc.webprac.tables.Reader;
 import ru.msu.cmc.webprac.utils.DAOFactory;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -80,5 +82,25 @@ public class MainController {
         List<Reader> readers = DAOFactory.getInstance().getBooksDAO().getReadersByBook(book_name);
         model.addAttribute("readersList", readers);
         return "book_readers";
+    }
+
+    @GetMapping("/add_reader")
+    public String addReaderShow () {
+        return "add_reader";
+    }
+
+    @PostMapping("/add_reader")
+    public String addReader (Model model, @RequestParam(name = "reader_name", required = false) String reader_name,
+                             @RequestParam(name = "reader_surname", required = false) String reader_surname,
+                             @RequestParam(name = "reader_patronymic", required = false) String reader_patronymic,
+                             @RequestParam(name = "reader_birth", required = false) String reader_birth,
+                             @RequestParam(name = "reader_address", required = false) String reader_address,
+                             @RequestParam(name = "reader_phone", required = false) String reader_phone) {
+        SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd");
+        String formatted_date = formatDate.format(new Date());
+        Reader reader = new Reader(reader_name, reader_surname, reader_patronymic,
+                formatted_date, reader_birth, reader_address, reader_phone);
+        DAOFactory.getInstance().getReaderDAO().addReader(reader);
+        return "add_reader";
     }
 }

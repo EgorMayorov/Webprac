@@ -42,6 +42,9 @@
       <input class="form-control" type="search" placeholder="Search Reader" aria-label="Search" name="search_reader">
       <button type="button" class="mini_button"><a href="/readers" class="nav-link px-2 text-secondary">Обновить</a></button>
     </form>
+    <form th:action="@{/add_reader}" method="get">
+      <button type="submit" class="mini_button">Добавить читателя</button>
+    </form>
   </center>
 </div>
 

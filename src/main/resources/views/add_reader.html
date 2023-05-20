@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html lang="ru">
+
+<head>
+  <meta charset='utf-8'>
+  <title>Add Reader</title>
+  <style>
+    body {
+      font-family: 'modern',sans-serif;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<style>
+  .button {
+    background-color: #77DD77;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 20px;
+    padding: 20px 35px;
+  }
+</style>
+
+<body>
+<div>
+  <center>
+    <form th:action="@{/add_reader}" method="post">
+      <fieldset>
+        <legend>Данные нового пользователя</legend>
+        <label>Фамилия<br><input type="text" name="reader_surname"></label><br>
+        <label>Имя<br><input type="text" name="reader_name"></label><br>
+        <label>Отчество<br><input type="text" name="reader_patronymic"></label><br>
+        <label>Дата рождения<br><input type="date" name="reader_birth"></label><br>
+        <label>Адрес<br><input type="text" name="reader_address"></label><br>
+        <label>Номер телефона<br><input type="text" name="reader_phone"></label>
+      </fieldset>
+      <button type="submit" class="button">Добавить</button>
+    </form>
+    <form th:action="@{/readers}" method="get">
+      <button type="submit" class="button">К списку читателей</button>
+    </form>
+  </center>
+</div>
+</body>
+</html>
