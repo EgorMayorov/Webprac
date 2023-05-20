@@ -4,7 +4,7 @@
 
 <head>
     <meta charset='utf-8'>
-    <title>Readers</title>
+    <title>Reader Info</title>
     <style>
         body {
             font-family: 'modern',sans-serif;
@@ -44,13 +44,12 @@
             <input type="hidden" name="reader_surname" th:attr="value=${reader_info.surname}">
             <button type="submit" class="button">Список книг</button>
         </form>
-<!--        <a class="button" href="start_page.html" th:href="@{/}">Список книг</a>-->
     </p>
     <p>
-        <a class="button" href="readers.html" th:href="@{/readers}">Назад</a>
+        <a class="button" th:href="@{/readers}">К списку читателей</a>
     </p>
     <p>
-        <a class="button" href="start_page.html" th:href="@{/}">На главную</a>
+        <a class="button" th:href="@{/}">На главную</a>
     </p>
 </div>
 </body>
