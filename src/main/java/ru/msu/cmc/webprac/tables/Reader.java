@@ -30,10 +30,6 @@ public class Reader {
     @Column(name = "patronymic")
     private String patronymic;
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "card_number")
-    private long card_number;
-
     @Column(nullable = false, name = "card_date")
     @NonNull
     private Date card_date;
@@ -76,7 +72,6 @@ public class Reader {
         return Objects.equals(reader_id, other.reader_id)
                 && name.equals(other.name)
                 && surname.equals(other.surname)
-                && patronymic.equals(other.patronymic)
-                && Objects.equals(card_number, other.card_number);
+                && patronymic.equals(other.patronymic);
     }
 }

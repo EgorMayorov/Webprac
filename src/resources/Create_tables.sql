@@ -33,7 +33,6 @@ CREATE TABLE reader (
                           "name" text not null ,
                           "surname" text not null unique ,
                           "patronymic" text,
-                          "card_number" SERIAL,
                           "card_date" date not null ,
                           "date_of_birth" date,
                           "address" text,
@@ -41,4 +40,4 @@ CREATE TABLE reader (
                           PRIMARY KEY ("reader_id")
 );
 
-alter sequence reader_card_number_seq restart with 1000001;
+alter sequence reader_reader_id_seq restart with 1000001;
