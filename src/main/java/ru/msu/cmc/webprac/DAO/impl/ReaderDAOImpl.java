@@ -52,13 +52,13 @@ public class ReaderDAOImpl extends ReaderDAO {
     }
 
     @Override
-    public Reader getReaderBySurname(String surname) {
-        Reader result = null;
+    public List<Reader> getReaderBySurname(String surname) {
+        List<Reader> result = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         Query<Reader> query = session.createQuery("FROM Reader WHERE surname LIKE :surname", Reader.class)
                 .setParameter("surname", "%" + surname + "%");
         if (query.getResultList().size() != 0) {
-            result = query.getSingleResult();
+            result = query.getResultList();
         }
         return result;
     }

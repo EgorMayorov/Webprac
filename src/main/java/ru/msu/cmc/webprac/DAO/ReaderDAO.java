@@ -10,7 +10,7 @@ public abstract class ReaderDAO {
     public abstract void deleteReader(Reader reader);
     public abstract void updateReader(Reader reader);
     public abstract Reader getReaderById(Long id);
-    public abstract Reader getReaderBySurname(String name);
+    public abstract List<Reader> getReaderBySurname(String name);
     public abstract List<Books> getReaderBooksBySurname(String name);
     public abstract List<Reader> getAllReader();
 }

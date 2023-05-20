@@ -38,7 +38,7 @@ public class Records {
     private Date returning_date;
 
     public Records(String reader_surname, String book_name){
-        setReader_id(DAOFactory.getInstance().getReaderDAO().getReaderBySurname(reader_surname));
+        setReader_id(DAOFactory.getInstance().getReaderDAO().getReaderBySurname(reader_surname).get(0));
         Book_Copy copy = DAOFactory.getInstance().getCopyDAO().GetBookCopyByBookName(book_name);
         setCopy_id(copy);
         copy.setIs_taken_now("Yes");

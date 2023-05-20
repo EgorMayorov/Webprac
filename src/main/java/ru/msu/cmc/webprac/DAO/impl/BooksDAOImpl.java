@@ -7,6 +7,7 @@ import org.hibernate.query.Query;
 import ru.msu.cmc.webprac.DAO.BooksDAO;
 import ru.msu.cmc.webprac.tables.Reader;
 import ru.msu.cmc.webprac.utils.DAOFactory;
+import ru.msu.cmc.webprac.utils.HibernateUtil;
 
 import java.util.List;
 
@@ -57,13 +58,13 @@ public class BooksDAOImpl extends BooksDAO {
     }
 
     @Override
-    public Books getBookByName(String name) {
-        Books result = null;
+    public List<Books> getBookByName(String name) {
+        List<Books> result = null;
         Session session = getSessionFactory().openSession();
         Query<Books> query = session.createQuery("FROM Books WHERE name LIKE :param", Books.class)
                 .setParameter("param", "%" + name + "%");
         if (query.getResultList().size() != 0) {
-            result = query.getSingleResult();
+            result = query.getResultList();
         }
         return result;
     }
@@ -71,7 +72,7 @@ public class BooksDAOImpl extends BooksDAO {
     @Override
     public List<Reader> getReadersByBook(String name) {
         java.util.List<Reader> result = null;
-        Session session = getSessionFactory().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Query<Reader> query = session.createQuery("Select DISTINCT rd " +
                         "FROM Records rec " +
                         "left join rec.reader_id rd " +
@@ -79,6 +80,17 @@ public class BooksDAOImpl extends BooksDAO {
                         "left join cp.book_id bk " +
                         "Where bk.name LIKE :book", Reader.class)
                 .setParameter("book", "%" + name + "%");
+        if (query.getResultList().size() != 0) {
+            result = query.getResultList();
+        }
+        return result;
+    }
+
+    @Override
+    public List<Books> getAllBooks() {
+        List<Books> result = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Query<Books> query = session.createQuery("FROM Books", Books.class);
         if (query.getResultList().size() != 0) {
             result = query.getResultList();
         }
