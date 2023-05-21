@@ -49,6 +49,11 @@
   <p th:text="${book_info.about}">Описание книги</p>
 
   <br>
+  <form th:action="@{/update_book}" method="get">
+    <input type="hidden" name="book_id" th:attr="value=${book_info.book_id}">
+    <button type="submit" class="button">Обновить информацию о книге</button>
+  </form>
+  <br>
   <form th:action="@{/book_readers}" method="get">
     <input type="hidden" name="book_name" th:attr="value=${book_info.name}">
     <button type="submit" class="button">Список читателей книги</button>

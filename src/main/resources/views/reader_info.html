@@ -40,6 +40,11 @@
         <tr><td>Номер телефона</td><td th:text="${reader_info.phone_number}">89100000000</td></tr>
     </table>
     <br>
+    <form th:action="@{/update_reader}" method="get">
+        <input type="hidden" name="reader_id" th:attr="value=${reader_info.reader_id}">
+        <button type="submit" class="button">Обновить информацию о пользователе</button>
+    </form>
+    <br>
     <form th:action="@{/reader_books}" method="get">
         <input type="hidden" name="reader_surname" th:attr="value=${reader_info.surname}">
         <button type="submit" class="button">Список прочтенных книг</button>

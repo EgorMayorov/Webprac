@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html lang="ru">
+
+<head>
+  <meta charset='utf-8'>
+  <title>Update Book</title>
+  <style>
+    body {
+      font-family: 'modern',sans-serif;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<style>
+  .button {
+    background-color: #77DD77;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 20px;
+    padding: 20px 35px;
+  }
+</style>
+
+<body>
+<div style="text-align: center">
+  <form th:action="@{/update_book}" method="post">
+    <fieldset>
+      <legend>Информация о новой книге</legend>
+      <label>Название<br><input type="text" th:attr="placeholder=${book.name}" name="book_name"></label><br>
+      <label>Автор<br><input type="text" th:attr="placeholder=${book.author}" name="book_author"></label><br>
+      <label>Издательство<br><input type="text" th:attr="placeholder=${book.publishing_house}" name="book_publisher"></label><br>
+      <label>Жанр<br><input type="text" th:attr="placeholder=${book.genre}" name="book_genre"></label><br>
+      <label>Описание<br><input type="text" th:attr="placeholder=${book.about}" name="book_about"></label>
+    </fieldset>
+    <br>
+    <input type="hidden" name="book_id" th:attr="value=${book.book_id}">
+    <button type="submit" class="button">Обновить</button>
+  </form>
+  <br>
+  <form th:action="@{/book_info}" method="get">
+    <input type="hidden" name="book_name" th:attr="value=${book.name}">
+    <button type="submit" class="button">К информации о книге</button>
+  </form>
+  <br>
+  <form th:action="@{/}" method="get">
+    <button type="submit" class="button">На главную</button>
+  </form>
+</div>
+</body>
+</html>

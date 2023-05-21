@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html lang="ru">
+
+<head>
+  <meta charset='utf-8'>
+  <title>Update Reader</title>
+  <style>
+    body {
+      font-family: 'modern',sans-serif;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<style>
+  .button {
+    background-color: #77DD77;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 20px;
+    padding: 20px 35px;
+  }
+</style>
+
+<body>
+<div style="text-align: center">
+  <form th:action="@{/update_reader}" method="post">
+    <fieldset>
+      <legend>Данные нового пользователя</legend>
+      <label>Фамилия<br><input type="text" th:attr="placeholder=${reader.surname}" name="reader_surname"></label><br>
+      <label>Имя<br><input type="text" th:attr="placeholder=${reader.name}" name="reader_name"></label><br>
+      <label>Отчество<br><input type="text" th:attr="placeholder=${reader.patronymic}" name="reader_patronymic"></label><br>
+      <label>Адрес<br><input type="text" th:attr="placeholder=${reader.address}" name="reader_address"></label><br>
+      <label>Номер телефона<br><input type="text" th:attr="placeholder=${reader.phone_number}" name="reader_phone"></label>
+    </fieldset>
+    <br>
+    <input type="hidden" name="reader_id" th:attr="value=${reader.reader_id}">
+    <button type="submit" class="button">Обновить</button>
+  </form>
+  <br>
+  <form th:action="@{/reader_info}" method="get">
+    <input type="hidden" name="reader_surname" th:attr="value=${reader.surname}">
+    <button type="submit" class="button">К информации о пользователе</button>
+  </form>
+  <br>
+  <form th:action="@{/}" method="get">
+    <button type="submit" class="button">На главную</button>
+  </form>
+</div>
+</body>
+</html>
