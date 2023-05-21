@@ -17,7 +17,7 @@ public class WebConfig implements WebMvcConfigurer {
 
         var templateResolver = new ClassLoaderTemplateResolver();
 
-        templateResolver.setPrefix("views/");
+        templateResolver.setPrefix("templates/");
         templateResolver.setCacheable(true);
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode("HTML");
