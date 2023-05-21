@@ -27,26 +27,24 @@
 </style>
 
 <body>
-<div>
-  <center>
-    <form th:action="@{/add_reader}" method="post">
-      <fieldset>
-        <legend>Данные нового пользователя</legend>
-        <label>Фамилия<br><input type="text" name="reader_surname"></label><br>
-        <label>Имя<br><input type="text" name="reader_name"></label><br>
-        <label>Отчество<br><input type="text" name="reader_patronymic"></label><br>
-        <label>Дата рождения<br><input type="date" name="reader_birth"></label><br>
-        <label>Адрес<br><input type="text" name="reader_address"></label><br>
-        <label>Номер телефона<br><input type="text" name="reader_phone"></label>
-      </fieldset>
-      <br>
-      <button type="submit" class="button">Добавить</button>
-    </form>
+<div style="text-align: center">
+  <form th:action="@{/add_reader}" method="post">
+    <fieldset>
+      <legend>Данные нового пользователя</legend>
+      <label>Фамилия<br><input type="text" name="reader_surname"></label><br>
+      <label>Имя<br><input type="text" name="reader_name"></label><br>
+      <label>Отчество<br><input type="text" name="reader_patronymic"></label><br>
+      <label>Дата рождения<br><input type="date" name="reader_birth"></label><br>
+      <label>Адрес<br><input type="text" name="reader_address"></label><br>
+      <label>Номер телефона<br><input type="text" name="reader_phone"></label>
+    </fieldset>
     <br>
-    <form th:action="@{/readers}" method="get">
-      <button type="submit" class="button">К списку читателей</button>
-    </form>
-  </center>
+    <button type="submit" class="button">Добавить</button>
+  </form>
+  <br>
+  <form th:action="@{/readers}" method="get">
+    <button type="submit" class="button">К списку читателей</button>
+  </form>
 </div>
 </body>
 </html>

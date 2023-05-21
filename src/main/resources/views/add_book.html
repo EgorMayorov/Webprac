@@ -4,7 +4,7 @@
 
 <head>
   <meta charset='utf-8'>
-  <title>Add Reader</title>
+  <title>Add Book</title>
   <style>
     body {
       font-family: 'modern',sans-serif;
@@ -27,26 +27,24 @@
 </style>
 
 <body>
-<div>
-  <center>
-    <form th:action="@{/add_book}" method="post">
-      <fieldset>
-        <legend>Информация о новой книге</legend>
-        <label>Название<br><input type="text" name="book_name"></label><br>
-        <label>Автор<br><input type="text" name="book_author"></label><br>
-        <label>Издательство<br><input type="text" name="book_publisher"></label><br>
-        <label>Количество экземпляров<br><input type="number" name="book_amount"></label><br>
-        <label>Жанр<br><input type="text" name="book_genre"></label><br>
-        <label>Описание<br><input type="text" name="book_about"></label>
-      </fieldset>
-      <br>
-      <button type="submit" class="button">Добавить</button>
-    </form>
+<div style="text-align: center">
+  <form th:action="@{/add_book}" method="post">
+    <fieldset>
+      <legend>Информация о новой книге</legend>
+      <label>Название<br><input type="text" name="book_name"></label><br>
+      <label>Автор<br><input type="text" name="book_author"></label><br>
+      <label>Издательство<br><input type="text" name="book_publisher"></label><br>
+      <label>Количество экземпляров<br><input type="number" name="book_amount"></label><br>
+      <label>Жанр<br><input type="text" name="book_genre"></label><br>
+      <label>Описание<br><input type="text" name="book_about"></label>
+    </fieldset>
     <br>
-    <form th:action="@{/books}" method="get">
-      <button type="submit" class="button">К списку книг</button>
-    </form>
-  </center>
+    <button type="submit" class="button">Добавить</button>
+  </form>
+  <br>
+  <form th:action="@{/books}" method="get">
+    <button type="submit" class="button">К списку книг</button>
+  </form>
 </div>
 </body>
 </html>

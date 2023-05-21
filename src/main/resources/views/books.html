@@ -4,7 +4,7 @@
 
 <head>
   <meta charset='utf-8'>
-  <title>Book</title>
+  <title>Books</title>
   <style>
     body {
       font-family: 'modern',sans-serif;
@@ -36,25 +36,23 @@
   }
 </style>
 
-<div>
-  <center>
-    <form role="search" method="post">
-      <input class="form-control" type="search" placeholder="Search Book" aria-label="Search" name="search_book">
+<div style="text-align: center">
+  <form role="search" method="post">
+    <input class="form-control" type="search" placeholder="Search Book" aria-label="Search" name="search_book">
 <!--      <button type="button" class="mini_button"><a href="/books" class="nav-link px-2 text-secondary">Обновить</a></button>-->
-    </form>
-    <br>
-    <form th:action="@{/books}" method="get">
-      <button type="submit" class="mini_button">Обновить</button>
-    </form>
-    <br>
-    <form th:action="@{/add_book}" method="get">
-      <button type="submit" class="mini_button">Добавить книгу</button>
-    </form>
-  </center>
+  </form>
+  <br>
+  <form th:action="@{/books}" method="get">
+    <button type="submit" class="mini_button">Обновить</button>
+  </form>
+  <br>
+  <form th:action="@{/add_book}" method="get">
+    <button type="submit" class="mini_button">Добавить книгу</button>
+  </form>
 </div>
 
 <body>
-<div style="text-align: center;">
+<div style="text-align: center">
   <h1>Книги</h1>
   <table align="center" border="1" cellpadding="5">
     <tr>
