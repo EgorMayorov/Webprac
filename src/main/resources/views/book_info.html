@@ -48,18 +48,19 @@
   </p>
   <p th:text="${book_info.about}">Описание книги</p>
 
-  <p>
-  <form th:action="@{/book_readers}" method="post">
+  <br>
+  <form th:action="@{/book_readers}" method="get">
     <input type="hidden" name="book_name" th:attr="value=${book_info.name}">
     <button type="submit" class="button">Список читателей книги</button>
   </form>
-  </p>
-  <p>
-    <a class="button" th:href="@{/books}">К списку книг</a>
-  </p>
-  <p>
-    <a class="button" th:href="@{/}">На главную</a>
-  </p>
+  <br>
+  <form th:action="@{/books}" method="get">
+    <button type="submit" class="button">К списку книг</button>
+  </form>
+  <br>
+  <form th:action="@{/}" method="get">
+    <button type="submit" class="button">На главную</button>
+  </form>
 </div>
 </body>
 </html>

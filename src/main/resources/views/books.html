@@ -40,8 +40,13 @@
   <center>
     <form role="search" method="post">
       <input class="form-control" type="search" placeholder="Search Book" aria-label="Search" name="search_book">
-      <button type="button" class="mini_button"><a href="/books" class="nav-link px-2 text-secondary">Обновить</a></button>
+<!--      <button type="button" class="mini_button"><a href="/books" class="nav-link px-2 text-secondary">Обновить</a></button>-->
     </form>
+    <br>
+    <form th:action="@{/books}" method="get">
+      <button type="submit" class="mini_button">Обновить</button>
+    </form>
+    <br>
     <form th:action="@{/add_book}" method="get">
       <button type="submit" class="mini_button">Добавить книгу</button>
     </form>
@@ -63,16 +68,17 @@
       <td th:text="${bk.author}">Карл Саган</td>
       <td th:text="${bk.genre}">Роман</td>
       <td>
-        <form th:action="@{/book_info}" method="post">
+        <form th:action="@{/book_info}" method="get">
           <input type="hidden" name="book_name" th:attr="value=${bk.name}">
           <button type="submit" class="mini_button">Информация</button>
         </form>
       </td>
     </tr>
   </table>
-  <p>
-    <a class="button" th:href="@{/}">На главную</a>
-  </p>
+  <br>
+  <form th:action="@{/}" method="get">
+    <button type="submit" class="button">На главную</button>
+  </form>
 </div>
 </body>
 </html>

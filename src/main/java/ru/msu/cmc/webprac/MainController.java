@@ -20,7 +20,6 @@ public class MainController {
     public String showReaders (Model model) {
         List<Reader> readers = DAOFactory.getInstance().getReaderDAO().getAllReader();
         model.addAttribute("readerList", readers);
-//        model.addAttribute("ReaderDAO", readerDAO);
         return "readers";
     }
 
@@ -36,17 +35,18 @@ public class MainController {
         return "readers";
     }
 
-    @PostMapping("/reader_info")
+    @GetMapping("/reader_info")
     public String readerInfo (Model model, @RequestParam(name = "reader_surname", required = false) String reader_surname) {
         Reader reader = DAOFactory.getInstance().getReaderDAO().getReaderBySurname(reader_surname).get(0);
         model.addAttribute("reader_info", reader);
         return "reader_info";
     }
 
-    @PostMapping("/reader_books")
+    @GetMapping("/reader_books")
     public String readerBooks (Model model, @RequestParam(name = "reader_surname", required = false) String reader_surname) {
         List<Books> books = DAOFactory.getInstance().getReaderDAO().getReaderBooksBySurname(reader_surname);
         model.addAttribute("booksList", books);
+        model.addAttribute("reader", reader_surname);
         return "reader_books";
     }
 
@@ -54,7 +54,6 @@ public class MainController {
     public String showBooks (Model model) {
         List<Books> books = DAOFactory.getInstance().getBooksDAO().getAllBooks();
         model.addAttribute("bookList", books);
-//        model.addAttribute("ReaderDAO", readerDAO);
         return "books";
     }
 
@@ -70,17 +69,18 @@ public class MainController {
         return "books";
     }
 
-    @PostMapping("/book_info")
+    @GetMapping("/book_info")
     public String bookInfo (Model model, @RequestParam(name = "book_name", required = false) String book_name) {
         List<Books> book = DAOFactory.getInstance().getBooksDAO().getBookByName(book_name);
         model.addAttribute("book_info", book.get(0));
         return "book_info";
     }
 
-    @PostMapping("/book_readers")
+    @GetMapping("/book_readers")
     public String bookReaders (Model model, @RequestParam(name = "book_name", required = false) String book_name) {
         List<Reader> readers = DAOFactory.getInstance().getBooksDAO().getReadersByBook(book_name);
         model.addAttribute("readersList", readers);
+        model.addAttribute("book", book_name);
         return "book_readers";
     }
 

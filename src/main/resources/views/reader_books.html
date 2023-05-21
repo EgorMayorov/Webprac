@@ -51,16 +51,22 @@
       <td th:text="${bk.author}">Карг Саган</td>
       <td th:text="${bk.genre}">Роман</td>
       <td>
-        <form th:action="@{/book_info}" method="post">
+        <form th:action="@{/book_info}" method="get">
           <input type="hidden" name="book_name" th:attr="value=${bk.name}">
           <button type="submit" class="mini_button">Информация</button>
         </form>
       </td>
     </tr>
   </table>
-  <p>
-    <a class="button" href="start_page.html" th:href="@{/}">На главную</a>
-  </p>
+  <br>
+  <form th:action="@{/reader_info}" method="get">
+    <input type="hidden" name="reader_surname" th:attr="value=${reader}">
+    <button type="submit" class="button">Назад к информации<br>о читателе</button>
+  </form>
+  <br>
+  <form th:action="@{/}" method="get">
+    <button type="submit" class="button">На главную</button>
+  </form>
 </div>
 </body>
 </html>

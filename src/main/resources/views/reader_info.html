@@ -39,18 +39,19 @@
         <tr><td>Адрес проживания</td><td th:text="${reader_info.address}">Москва</td></tr>
         <tr><td>Номер телефона</td><td th:text="${reader_info.phone_number}">89100000000</td></tr>
     </table>
-    <p>
-        <form th:action="@{/reader_books}" method="post">
-            <input type="hidden" name="reader_surname" th:attr="value=${reader_info.surname}">
-            <button type="submit" class="button">Список книг</button>
-        </form>
-    </p>
-    <p>
-        <a class="button" th:href="@{/readers}">К списку читателей</a>
-    </p>
-    <p>
-        <a class="button" th:href="@{/}">На главную</a>
-    </p>
+    <br>
+    <form th:action="@{/reader_books}" method="get">
+        <input type="hidden" name="reader_surname" th:attr="value=${reader_info.surname}">
+        <button type="submit" class="button">Список прочтенных книг</button>
+    </form>
+    <br>
+    <form th:action="@{/readers}" method="get">
+        <button type="submit" class="button">К списку читателей</button>
+    </form>
+    <br>
+    <form th:action="@{/}" method="get">
+        <button type="submit" class="button">На главную</button>
+    </form>
 </div>
 </body>
 </html>

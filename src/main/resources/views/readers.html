@@ -40,8 +40,13 @@
   <center>
     <form role="search" method="post">
       <input class="form-control" type="search" placeholder="Search Reader" aria-label="Search" name="search_reader">
-      <button type="button" class="mini_button"><a href="/readers" class="nav-link px-2 text-secondary">Обновить</a></button>
+<!--      <button type="button" class="mini_button"><a href="/readers" class="nav-link px-2 text-secondary">Обновить</a></button>-->
     </form>
+    <br>
+    <form th:action="@{/readers}" method="get">
+      <button type="submit" class="mini_button">Обновить</button>
+    </form>
+    <br>
     <form th:action="@{/add_reader}" method="get">
       <button type="submit" class="mini_button">Добавить читателя</button>
     </form>
@@ -73,16 +78,18 @@
 <!--    <td th:text="${rd.address}">Москва</td>-->
 <!--    <td th:text="${rd.phone_number}">89100000000</td>-->
     <td>
-      <form th:action="@{/reader_info}" method="post">
+      <form th:action="@{/reader_info}" method="get">
         <input type="hidden" name="reader_surname" th:attr="value=${rd.surname}">
         <button type="submit" class="mini_button">Информация</button>
       </form>
     </td>
   </tr>
 </table>
-<p>
-  <a class="button" th:href="@{/}">На главную</a>
-</p>
+  <br>
+  <form th:action="@{/}" method="get">
+    <button type="submit" class="button">На главную</button>
+  </form>
+<!--  <a class="button" th:href="@{/}">На главную</a>-->
 </div>
 </body>
 </html>

@@ -34,13 +34,13 @@
   <br>
   <br>
   <br>
+  <form th:action="@{/readers}" method="get">
+    <button type="submit" class="button">Читатели</button>
+  </form>
   <br>
-  <br>
-  <a class="button" th:href="@{/readers}">Читатели</a>
-  <br>
-  <br>
-  <a class="button" th:href="@{/books}">Книги</a>
-</div>
+  <form th:action="@{/books}" method="get">
+    <button type="submit" class="button">Книги</button>
+  </form></div>
 </body>
 
 </html>

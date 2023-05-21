@@ -53,16 +53,22 @@
             <td th:text="${rd.patronymic}">Иванов</td>
             <td th:text="${rd.reader_id}">1000000</td>
             <td>
-                <form th:action="@{/reader_info}" method="post">
+                <form th:action="@{/reader_info}" method="get">
                     <input type="hidden" name="reader_surname" th:attr="value=${rd.surname}">
                     <button type="submit" class="mini_button">Информация</button>
                 </form>
             </td>
         </tr>
     </table>
-    <p>
-        <a class="button" href="start_page.html" th:href="@{/}">На главную</a>
-    </p>
+    <br>
+    <form th:action="@{/book_info}" method="get">
+        <input type="hidden" name="book_name" th:attr="value=${book}">
+        <button type="submit" class="button">Назад к информации<br>о книге</button>
+    </form>
+    <br>
+    <form th:action="@{/}" method="get">
+        <button type="submit" class="button">На главную</button>
+    </form>
 </div>
 </body>
 </html>
