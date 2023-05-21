@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS books, book_copy, records, reader;
 
 CREATE TABLE books (
                          "book_id" SERIAL,
-                         "name" text not null ,
+                         "name" text not null unique ,
                          "author" text not null ,
                          "publishing_house" text not null ,
                          "amount" int not null ,
