@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.msu.cmc.webprac.tables.Books;
 import ru.msu.cmc.webprac.tables.Reader;
+import ru.msu.cmc.webprac.tables.Records;
 import ru.msu.cmc.webprac.utils.DAOFactory;
 
 import java.text.SimpleDateFormat;
@@ -176,23 +177,34 @@ public class MainController {
                                 @RequestParam(name = "book_genre", required = false) String book_genre,
                                 @RequestParam(name = "book_about", required = false) String book_about) {
         Books book = DAOFactory.getInstance().getBooksDAO().getBookById(book_id);
-        if (!book_name.equals("")) {
-            book.setName(book_name);
-        }
-        if (!book_author.equals("")) {
-            book.setAuthor(book_author);
-        }
-        if (!book_publisher.equals("")) {
-            book.setPublishing_house(book_publisher);
-        }
-        if (!book_genre.equals("")) {
-            book.setGenre(book_genre);
-        }
-        if (!book_about.equals("")) {
-            book.setAbout(book_about);
-        }
+        if (!book_name.equals("")) book.setName(book_name);
+        if (!book_author.equals("")) book.setAuthor(book_author);
+        if (!book_publisher.equals("")) book.setPublishing_house(book_publisher);
+        if (!book_genre.equals("")) book.setGenre(book_genre);
+        if (!book_about.equals("")) book.setAbout(book_about);
         DAOFactory.getInstance().getBooksDAO().updateBook(book);
         model.addAttribute("book", book);
         return "update_book";
+    }
+
+    @GetMapping("/give_book")
+    public String giveBook (Model model) {
+        List<Reader> readers = DAOFactory.getInstance().getReaderDAO().getAllReader();
+        List<Books> books = DAOFactory.getInstance().getBooksDAO().getAllBooks();
+        model.addAttribute("books", books);
+        model.addAttribute("readers", readers);
+        return "give_book";
+    }
+
+    @PostMapping("/give_book")
+    public String giveBookPost (Model model,
+                                @RequestParam(name = "reader")String reader,
+                                @RequestParam(name = "book") String book) {
+        DAOFactory.getInstance().getRecordsDAO().addRecord(new Records(reader, book));
+        List<Reader> readers = DAOFactory.getInstance().getReaderDAO().getAllReader();
+        List<Books> books = DAOFactory.getInstance().getBooksDAO().getAllBooks();
+        model.addAttribute("books", books);
+        model.addAttribute("readers", readers);
+        return "give_book";
     }
 }

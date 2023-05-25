@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html lang="ru">
+
+<head>
+    <meta charset='utf-8'>
+    <title>Give Book</title>
+    <style>
+        body {
+            font-family: 'modern',sans-serif;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<style>
+    .button {
+        background-color: #77DD77;
+        text-align: center;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        display: inline-block;
+        font-size: 20px;
+        padding: 20px 35px;
+    }
+</style>
+
+<body>
+<div style="text-align: center">
+    <h1>Выдача книги читателю</h1>
+    <form th:action="@{/give_book}" method="post">
+    <select class="form-control" id="task" name="reader">
+        <option value="">Выберите читателя</option>
+        <option th:each="rd: ${readers}"
+                th:value="${rd.surname}"
+                th:text="${rd.surname}">
+        </option>
+    </select>
+    <select class="form-control" name="book">
+        <option value="">Выберите книгу</option>
+        <option th:each="bk: ${books}"
+                th:value="${bk.name}"
+                th:text="${bk.name}">
+        </option>
+    </select>
+    <button type="submit">Выбрать</button>
+</form>
+
+
+    <br>
+    <form th:action="@{/}" method="get">
+        <button type="submit" class="button">На главную</button>
+    </form>
+</div>
+</body>
+</html>
