@@ -39,15 +39,14 @@
 <div style="text-align: center">
   <form role="search" method="post">
     <input class="form-control" type="search" placeholder="Search Book" aria-label="Search" name="search_book">
-<!--      <button type="button" class="mini_button"><a href="/books" class="nav-link px-2 text-secondary">Обновить</a></button>-->
   </form>
   <br>
   <form th:action="@{/books}" method="get">
-    <button type="submit" class="mini_button">Обновить</button>
+    <button type="submit" class="button">Обновить</button>
   </form>
   <br>
   <form th:action="@{/add_book}" method="get">
-    <button type="submit" class="mini_button">Добавить книгу</button>
+    <button type="submit" class="button">Добавить книгу</button>
   </form>
 </div>
 
