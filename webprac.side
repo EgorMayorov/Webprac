@@ -1,0 +1,1553 @@
+{
+  "id": "e7ad7dd0-e076-4d76-9f2a-38c629624d49",
+  "version": "2.0",
+  "name": "webprac",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "9f355fe7-ea24-48c2-b3aa-947e55b1d01e",
+    "name": "check_info",
+    "commands": [{
+      "id": "e085167f-8ce9-4ef0-a4ff-79dd6a0e9d6a",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "09ec4460-7085-4ddc-92ef-8f193009b4c6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "879x746",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6c474e9b-f26b-4a3e-b199-3449daaf4ae9",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(5) > .button",
+      "targets": [
+        ["css=form:nth-child(5) > .button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Читатели')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a511bf99-608f-497c-94da-3d109b2d3c76",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Readers",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e13c24b4-3cd2-4b1d-93a3-b6adf972e8c4",
+      "comment": "",
+      "command": "click",
+      "target": "name=search_reader",
+      "targets": [
+        ["name=search_reader", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='search_reader']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b9bab818-52f6-40bf-bd08-372d9d8494f8",
+      "comment": "",
+      "command": "click",
+      "target": "name=search_reader",
+      "targets": [
+        ["name=search_reader", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='search_reader']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ee0697a-618d-4a29-873d-7d6abc35d36c",
+      "comment": "",
+      "command": "type",
+      "target": "name=search_reader",
+      "targets": [
+        ["name=search_reader", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='search_reader']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Кочармин"
+    }, {
+      "id": "34110e19-5f4b-4228-9595-b05f2eee2b8d",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=search_reader",
+      "targets": [
+        ["name=search_reader", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='search_reader']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "8c4290af-c2d2-4a5a-8cb3-233f263dc80f",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(3) > .button",
+      "targets": [
+        ["css=form:nth-child(3) > .button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Обновить')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "999a2f9e-d9cd-49dd-b0c7-cf25afcdf63b",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(4) .mini_button",
+      "targets": [
+        ["css=tr:nth-child(4) .mini_button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[5]", "xpath:attributes"],
+        ["xpath=//tr[4]/td[5]/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "80ffe71e-aca0-4c67-937f-19a4a75ad4c8",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Reader Info",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "854f5340-6edb-471b-8539-8efe012bc64c",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(6) > .button",
+      "targets": [
+        ["css=form:nth-child(6) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Список прочтенных книг')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "240a5111-69cc-42f5-b2ab-861d6f22fa30",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Books for Reader",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "589c1da6-3b62-48db-b32b-4c49e296ddc0",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(5) .mini_button",
+      "targets": [
+        ["css=tr:nth-child(5) .mini_button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[4]", "xpath:attributes"],
+        ["xpath=//tr[5]/td[4]/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "77b8c103-8594-4ef0-84ec-07b81d7d8c76",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Book Info",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "06ecd822-7c00-45ea-a619-5a6c73e384f2",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(11) > .button",
+      "targets": [
+        ["css=form:nth-child(11) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[3]", "xpath:attributes"],
+        ["xpath=//form[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'К списку книг')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7a71affb-b4d7-439b-b1cc-46786dc752fb",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Книги')]", "xpath:innerText"]
+      ],
+      "value": "Книги"
+    }, {
+      "id": "be45402d-9163-44f8-b053-228681e9d476",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Books",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a699302a-07e5-4c6b-b7d6-39ceefd0f808",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(4) > .button",
+      "targets": [
+        ["css=form:nth-child(4) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[9]", "xpath:attributes"],
+        ["xpath=//div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'На главную')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8f3926f4-d26d-47c7-b4ce-b48394117d9d",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Library",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6233ae98-b876-48fb-bb46-3f4f6097f9c6",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(7) > .button",
+      "targets": [
+        ["css=form:nth-child(7) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Книги')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "24642735-9dc5-46c9-bed2-953d2360bd59",
+      "comment": "",
+      "command": "click",
+      "target": "name=search_book",
+      "targets": [
+        ["name=search_book", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='search_book']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b2f0852-2a3f-4993-92f3-e45270962e09",
+      "comment": "",
+      "command": "type",
+      "target": "name=search_book",
+      "targets": [
+        ["name=search_book", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='search_book']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Контакт"
+    }, {
+      "id": "b1ae3653-3486-49e3-80ea-28b70be3cbd2",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=search_book",
+      "targets": [
+        ["name=search_book", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@name='search_book']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "0e2ab618-9252-4eb6-b08f-af1f264dca18",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Books",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "20dff87e-5dbe-488b-8561-31958e275f5e",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(4) > .button",
+      "targets": [
+        ["css=form:nth-child(4) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[4]", "xpath:attributes"],
+        ["xpath=//div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'На главную')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0b7d0f5e-a4bf-4655-a3f3-7bf7cdf145e9",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Library",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "9eadccf5-cf18-4691-8750-774219e14cfc",
+    "name": "update_tests",
+    "commands": [{
+      "id": "cd178d65-c2b4-4a61-b22f-473650edc076",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b780836d-74a0-4c3f-b3bd-05191936374b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "879x746",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "461bcf2c-775d-4e8a-b66b-0455fa7a2375",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(5) > .button",
+      "targets": [
+        ["css=form:nth-child(5) > .button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Читатели')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "731cc984-de8f-486e-b970-e455c2b5ff96",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(7) .mini_button",
+      "targets": [
+        ["css=tr:nth-child(7) .mini_button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[8]", "xpath:attributes"],
+        ["xpath=//tr[7]/td[5]/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe219ed8-8228-458c-8980-7cb8e97b9b08",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(4) > .button",
+      "targets": [
+        ["css=form:nth-child(4) > .button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Обновить информацию о пользователе')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ac63131-ef88-49e5-803e-d07f6acdd726",
+      "comment": "",
+      "command": "click",
+      "target": "name=reader_phone",
+      "targets": [
+        ["name=reader_phone", "name"],
+        ["css=label:nth-child(10) > input", "css:finder"],
+        ["xpath=//input[@name='reader_phone']", "xpath:attributes"],
+        ["xpath=//label[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b74f12f8-2bbc-4ead-b24c-b2c5ba355a82",
+      "comment": "",
+      "command": "type",
+      "target": "name=reader_phone",
+      "targets": [
+        ["name=reader_phone", "name"],
+        ["css=label:nth-child(10) > input", "css:finder"],
+        ["xpath=//input[@name='reader_phone']", "xpath:attributes"],
+        ["xpath=//label[5]/input", "xpath:position"]
+      ],
+      "value": "89150010011"
+    }, {
+      "id": "1c0440b1-4ed5-4e0b-ad98-85eb2b7f278a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button:nth-child(4)",
+      "targets": [
+        ["css=.button:nth-child(4)", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Обновить')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5ddd84e9-c737-4083-b3d3-c240d2b53d3b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button:nth-child(2)",
+      "targets": [
+        ["css=.button:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'К информации о пользователе')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c7d0a676-df8a-4856-97db-30f84664a84a",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(8) > td:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(8) > td:nth-child(2)", "css:finder"],
+        ["xpath=//tr[8]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'89150010011')]", "xpath:innerText"]
+      ],
+      "value": "89150010011"
+    }, {
+      "id": "601b7fb7-572d-4100-8d47-b4e0475397ac",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(10) > .button",
+      "targets": [
+        ["css=form:nth-child(10) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[4]", "xpath:attributes"],
+        ["xpath=//form[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'На главную')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6099402f-ca9d-49f0-8f8e-bdcec29349f9",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(7) > .button",
+      "targets": [
+        ["css=form:nth-child(7) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Книги')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "541c33f9-952d-4e3e-b867-695015c97026",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(7) .mini_button",
+      "targets": [
+        ["css=tr:nth-child(7) .mini_button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[8]", "xpath:attributes"],
+        ["xpath=//tr[7]/td[4]/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bbc1a4b6-5776-4e10-83b8-086547e9f275",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(7) > .button",
+      "targets": [
+        ["css=form:nth-child(7) > .button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Обновить информацию о книге')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff3e8c10-f3d7-4e72-8084-bf9594e722cf",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Update Book",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "86b484c5-019f-4a8a-b167-1f3494656e2d",
+      "comment": "",
+      "command": "click",
+      "target": "name=book_about",
+      "targets": [
+        ["name=book_about", "name"],
+        ["css=label:nth-child(10) > input", "css:finder"],
+        ["xpath=//input[@name='book_about']", "xpath:attributes"],
+        ["xpath=//label[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ce4bfd4-71ae-4bd4-adc3-651991866763",
+      "comment": "",
+      "command": "click",
+      "target": "name=book_about",
+      "targets": [
+        ["name=book_about", "name"],
+        ["css=label:nth-child(10) > input", "css:finder"],
+        ["xpath=//input[@name='book_about']", "xpath:attributes"],
+        ["xpath=//label[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a5dbf16b-f653-4625-b531-e00048a52c1c",
+      "comment": "",
+      "command": "type",
+      "target": "name=book_about",
+      "targets": [
+        ["name=book_about", "name"],
+        ["css=label:nth-child(10) > input", "css:finder"],
+        ["xpath=//input[@name='book_about']", "xpath:attributes"],
+        ["xpath=//label[5]/input", "xpath:position"]
+      ],
+      "value": "описание книги"
+    }, {
+      "id": "203b8593-5222-48be-8030-a1e23a86dcd9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button:nth-child(4)",
+      "targets": [
+        ["css=.button:nth-child(4)", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Обновить')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "df3b30e9-ec40-4e63-9330-95ade04581e1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button:nth-child(2)",
+      "targets": [
+        ["css=.button:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'К информации о книге')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0dc19b52-0b59-489c-a171-cfc388d82d3e",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Book Info",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "109ab489-7af8-41bb-a1b7-443687f4d681",
+      "comment": "",
+      "command": "click",
+      "target": "css=p:nth-child(5)",
+      "targets": [
+        ["css=p:nth-child(5)", "css:finder"],
+        ["xpath=//p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'описание книги')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "38ebb501-0fe9-4ef9-a868-c83e497008a6",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Book Info",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "39233112-762d-4501-a12f-414763eefb5a",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=p:nth-child(5)",
+      "targets": [
+        ["css=p:nth-child(5)", "css:finder"],
+        ["xpath=//p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'описание книги')]", "xpath:innerText"]
+      ],
+      "value": "описание книги"
+    }, {
+      "id": "37651416-a219-447f-ab62-c2e79a4298db",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(11) > .button",
+      "targets": [
+        ["css=form:nth-child(11) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[3]", "xpath:attributes"],
+        ["xpath=//form[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'К списку книг')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "36e46eaa-28e2-4bfa-bf38-254c9f15dc50",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(4) > .button",
+      "targets": [
+        ["css=form:nth-child(4) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[9]", "xpath:attributes"],
+        ["xpath=//div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'На главную')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8bb91910-9f70-4e94-b364-8cd839edb616",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Library",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "455ae2e9-89cd-44db-9479-97f6da80704c",
+    "name": "add_new_reader_and_book",
+    "commands": [{
+      "id": "5c53f8af-3de5-435d-8d5f-f08fa445d138",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "af03535b-188e-439e-b495-bf3343974fdc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "879x746",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "68be0642-bd00-4602-ac7f-0b9e85fb51ba",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(5) > .button",
+      "targets": [
+        ["css=form:nth-child(5) > .button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Читатели')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9b34607-f1f2-442d-a407-a51670bf148f",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Readers",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "03ed5e95-3edb-4f28-bd99-abda537a8a26",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(5) > .button",
+      "targets": [
+        ["css=form:nth-child(5) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Добавить читателя')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fdfb3e9b-14ec-4b3e-b0a4-e98578d9ba4d",
+      "comment": "",
+      "command": "click",
+      "target": "name=reader_surname",
+      "targets": [
+        ["name=reader_surname", "name"],
+        ["css=label:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='reader_surname']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4a96f4b8-1ec5-453a-813d-4d8fd54923a1",
+      "comment": "",
+      "command": "click",
+      "target": "name=reader_surname",
+      "targets": [
+        ["name=reader_surname", "name"],
+        ["css=label:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='reader_surname']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1be54aaf-3058-4ce8-9bb1-91a881ddb22a",
+      "comment": "",
+      "command": "type",
+      "target": "name=reader_surname",
+      "targets": [
+        ["name=reader_surname", "name"],
+        ["css=label:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='reader_surname']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Фамилия"
+    }, {
+      "id": "5569cb84-c102-47ed-b48e-d99499bf2523",
+      "comment": "",
+      "command": "click",
+      "target": "css=fieldset",
+      "targets": [
+        ["css=fieldset", "css:finder"],
+        ["xpath=//fieldset", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3bd9d66e-7b49-49e5-b0ae-755e9f59c6bd",
+      "comment": "",
+      "command": "click",
+      "target": "name=reader_name",
+      "targets": [
+        ["name=reader_name", "name"],
+        ["css=label:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@name='reader_name']", "xpath:attributes"],
+        ["xpath=//label[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "15d2ede9-1b22-4514-bc13-0dc671ce6b6f",
+      "comment": "",
+      "command": "type",
+      "target": "name=reader_name",
+      "targets": [
+        ["name=reader_name", "name"],
+        ["css=label:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@name='reader_name']", "xpath:attributes"],
+        ["xpath=//label[2]/input", "xpath:position"]
+      ],
+      "value": "Имя"
+    }, {
+      "id": "a6629709-cc7a-4bb1-8c78-762422143460",
+      "comment": "",
+      "command": "click",
+      "target": "css=fieldset",
+      "targets": [
+        ["css=fieldset", "css:finder"],
+        ["xpath=//fieldset", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "670a93b8-2a55-4d25-9d29-0dde741ea02c",
+      "comment": "",
+      "command": "click",
+      "target": "name=reader_patronymic",
+      "targets": [
+        ["name=reader_patronymic", "name"],
+        ["css=label:nth-child(6) > input", "css:finder"],
+        ["xpath=//input[@name='reader_patronymic']", "xpath:attributes"],
+        ["xpath=//label[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6720ff8e-3025-40c6-aa56-edb1b3af2c35",
+      "comment": "",
+      "command": "type",
+      "target": "name=reader_patronymic",
+      "targets": [
+        ["name=reader_patronymic", "name"],
+        ["css=label:nth-child(6) > input", "css:finder"],
+        ["xpath=//input[@name='reader_patronymic']", "xpath:attributes"],
+        ["xpath=//label[3]/input", "xpath:position"]
+      ],
+      "value": "Отчество"
+    }, {
+      "id": "e06fe0de-4866-422f-8d52-efb1863caa7b",
+      "comment": "",
+      "command": "click",
+      "target": "css=fieldset",
+      "targets": [
+        ["css=fieldset", "css:finder"],
+        ["xpath=//fieldset", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3950ce6-00d2-4ec2-b890-bc2397af295a",
+      "comment": "",
+      "command": "click",
+      "target": "name=reader_birth",
+      "targets": [
+        ["name=reader_birth", "name"],
+        ["css=label:nth-child(8) > input", "css:finder"],
+        ["xpath=//input[@name='reader_birth']", "xpath:attributes"],
+        ["xpath=//label[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "11951e0d-a3f0-4a5c-9bab-9119709a599c",
+      "comment": "",
+      "command": "type",
+      "target": "name=reader_birth",
+      "targets": [
+        ["name=reader_birth", "name"],
+        ["css=label:nth-child(8) > input", "css:finder"],
+        ["xpath=//input[@name='reader_birth']", "xpath:attributes"],
+        ["xpath=//label[4]/input", "xpath:position"]
+      ],
+      "value": "2023-05-01"
+    }, {
+      "id": "5c96488a-7a8c-42ce-aa82-65ad14185264",
+      "comment": "",
+      "command": "click",
+      "target": "name=reader_address",
+      "targets": [
+        ["name=reader_address", "name"],
+        ["css=label:nth-child(10) > input", "css:finder"],
+        ["xpath=//input[@name='reader_address']", "xpath:attributes"],
+        ["xpath=//label[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "12457cf6-d91c-4c2f-b22e-4d0a087baa9b",
+      "comment": "",
+      "command": "type",
+      "target": "name=reader_address",
+      "targets": [
+        ["name=reader_address", "name"],
+        ["css=label:nth-child(10) > input", "css:finder"],
+        ["xpath=//input[@name='reader_address']", "xpath:attributes"],
+        ["xpath=//label[5]/input", "xpath:position"]
+      ],
+      "value": "адрес"
+    }, {
+      "id": "ac822fb5-77eb-4f38-8013-5d1dd1625481",
+      "comment": "",
+      "command": "click",
+      "target": "name=reader_phone",
+      "targets": [
+        ["name=reader_phone", "name"],
+        ["css=label:nth-child(12) > input", "css:finder"],
+        ["xpath=//input[@name='reader_phone']", "xpath:attributes"],
+        ["xpath=//label[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ed8ed0d-0ec9-47e7-a8da-c1379956ff81",
+      "comment": "",
+      "command": "type",
+      "target": "name=reader_phone",
+      "targets": [
+        ["name=reader_phone", "name"],
+        ["css=label:nth-child(12) > input", "css:finder"],
+        ["xpath=//input[@name='reader_phone']", "xpath:attributes"],
+        ["xpath=//label[6]/input", "xpath:position"]
+      ],
+      "value": "89151231212"
+    }, {
+      "id": "3d3b58a9-8462-4830-a2a0-e6622a3181f8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button:nth-child(3)",
+      "targets": [
+        ["css=.button:nth-child(3)", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Добавить')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "906466c4-df1e-4fab-90da-8679a07c6684",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button:nth-child(1)",
+      "targets": [
+        ["css=.button:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'К списку читателей')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "32d9cb34-98a5-40a9-8133-fd0bc1cc17dc",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Readers",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bf366f53-6a9e-4e79-b46e-3e046eb6fd9f",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(8) > td:nth-child(1)",
+      "targets": [
+        ["css=tr:nth-child(8) > td:nth-child(1)", "css:finder"],
+        ["xpath=//tr[8]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Фамилия')]", "xpath:innerText"]
+      ],
+      "value": "Фамилия"
+    }, {
+      "id": "48e7055c-14a3-437e-859a-aa016c9402b6",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(4) > .button",
+      "targets": [
+        ["css=form:nth-child(4) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[10]", "xpath:attributes"],
+        ["xpath=//div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'На главную')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "389ba535-7653-4aba-9051-9f784b679141",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(7) > .button",
+      "targets": [
+        ["css=form:nth-child(7) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Книги')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b2dc2d2-2f8f-4842-9fe9-81939cfc251a",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(5) > .button",
+      "targets": [
+        ["css=form:nth-child(5) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Добавить книгу')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4081932d-d8f7-40ef-a5b6-640768f8fefe",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Add Book",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1358395d-7365-4a3e-b288-4bed85d28676",
+      "comment": "",
+      "command": "click",
+      "target": "name=book_name",
+      "targets": [
+        ["name=book_name", "name"],
+        ["css=label:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='book_name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b24646e-e1d2-46cf-9a31-791f92ad3219",
+      "comment": "",
+      "command": "type",
+      "target": "name=book_name",
+      "targets": [
+        ["name=book_name", "name"],
+        ["css=label:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='book_name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "название"
+    }, {
+      "id": "b6b203f0-c3ea-4482-bf15-5207037caa77",
+      "comment": "",
+      "command": "click",
+      "target": "name=book_author",
+      "targets": [
+        ["name=book_author", "name"],
+        ["css=label:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@name='book_author']", "xpath:attributes"],
+        ["xpath=//label[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "571a187f-85fd-423c-965d-5e0450d508f2",
+      "comment": "",
+      "command": "type",
+      "target": "name=book_author",
+      "targets": [
+        ["name=book_author", "name"],
+        ["css=label:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@name='book_author']", "xpath:attributes"],
+        ["xpath=//label[2]/input", "xpath:position"]
+      ],
+      "value": "автор"
+    }, {
+      "id": "077df01e-d122-4e0b-96c2-a5e3d79df4a7",
+      "comment": "",
+      "command": "click",
+      "target": "css=fieldset",
+      "targets": [
+        ["css=fieldset", "css:finder"],
+        ["xpath=//fieldset", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5fe6f4a7-b325-400a-a668-6cd3a5562c7b",
+      "comment": "",
+      "command": "click",
+      "target": "name=book_publisher",
+      "targets": [
+        ["name=book_publisher", "name"],
+        ["css=label:nth-child(6) > input", "css:finder"],
+        ["xpath=//input[@name='book_publisher']", "xpath:attributes"],
+        ["xpath=//label[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "65f01b0c-c230-4f47-84da-c0dba57af971",
+      "comment": "",
+      "command": "type",
+      "target": "name=book_publisher",
+      "targets": [
+        ["name=book_publisher", "name"],
+        ["css=label:nth-child(6) > input", "css:finder"],
+        ["xpath=//input[@name='book_publisher']", "xpath:attributes"],
+        ["xpath=//label[3]/input", "xpath:position"]
+      ],
+      "value": "издательство"
+    }, {
+      "id": "85b1b0ef-25a3-4abc-9571-2f45dd1f89ba",
+      "comment": "",
+      "command": "click",
+      "target": "css=fieldset",
+      "targets": [
+        ["css=fieldset", "css:finder"],
+        ["xpath=//fieldset", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "05a46e7d-b95f-45fb-8068-1e559fd731b6",
+      "comment": "",
+      "command": "click",
+      "target": "name=book_amount",
+      "targets": [
+        ["name=book_amount", "name"],
+        ["css=label:nth-child(8) > input", "css:finder"],
+        ["xpath=//input[@name='book_amount']", "xpath:attributes"],
+        ["xpath=//label[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7ba7ba68-0774-4b6b-89d2-1d89f99cc736",
+      "comment": "",
+      "command": "type",
+      "target": "name=book_amount",
+      "targets": [
+        ["name=book_amount", "name"],
+        ["css=label:nth-child(8) > input", "css:finder"],
+        ["xpath=//input[@name='book_amount']", "xpath:attributes"],
+        ["xpath=//label[4]/input", "xpath:position"]
+      ],
+      "value": "10"
+    }, {
+      "id": "7a65cbfd-36bf-4dc1-b24e-0cd4acb958e8",
+      "comment": "",
+      "command": "click",
+      "target": "css=fieldset",
+      "targets": [
+        ["css=fieldset", "css:finder"],
+        ["xpath=//fieldset", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "efe21b8b-4473-4ca3-b64c-b7e51813bf6f",
+      "comment": "",
+      "command": "click",
+      "target": "name=book_genre",
+      "targets": [
+        ["name=book_genre", "name"],
+        ["css=label:nth-child(10) > input", "css:finder"],
+        ["xpath=//input[@name='book_genre']", "xpath:attributes"],
+        ["xpath=//label[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f96c7a0f-34e5-4ab7-a40c-b1325b41da8d",
+      "comment": "",
+      "command": "type",
+      "target": "name=book_genre",
+      "targets": [
+        ["name=book_genre", "name"],
+        ["css=label:nth-child(10) > input", "css:finder"],
+        ["xpath=//input[@name='book_genre']", "xpath:attributes"],
+        ["xpath=//label[5]/input", "xpath:position"]
+      ],
+      "value": "жанр"
+    }, {
+      "id": "3635326a-9cf7-4092-a426-acf4683ec1e8",
+      "comment": "",
+      "command": "click",
+      "target": "css=fieldset",
+      "targets": [
+        ["css=fieldset", "css:finder"],
+        ["xpath=//fieldset", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "338b1bac-c8aa-4bb8-82cd-9896caed5e8f",
+      "comment": "",
+      "command": "click",
+      "target": "name=book_about",
+      "targets": [
+        ["name=book_about", "name"],
+        ["css=label:nth-child(12) > input", "css:finder"],
+        ["xpath=//input[@name='book_about']", "xpath:attributes"],
+        ["xpath=//label[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1e13967d-a0d9-4001-93db-e3e1e8514f63",
+      "comment": "",
+      "command": "type",
+      "target": "name=book_about",
+      "targets": [
+        ["name=book_about", "name"],
+        ["css=label:nth-child(12) > input", "css:finder"],
+        ["xpath=//input[@name='book_about']", "xpath:attributes"],
+        ["xpath=//label[6]/input", "xpath:position"]
+      ],
+      "value": "описание"
+    }, {
+      "id": "83c76297-a9f2-431b-aa0a-24f5d4cd9113",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(1)",
+      "targets": [
+        ["css=form:nth-child(1)", "css:finder"],
+        ["xpath=//form[@action='/add_book']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b32aa764-eec8-46b5-9895-25320a669ea1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button:nth-child(3)",
+      "targets": [
+        ["css=.button:nth-child(3)", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Добавить')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "75d2c9e5-117d-46eb-b270-0dedfca0bef8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button:nth-child(1)",
+      "targets": [
+        ["css=.button:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'К списку книг')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c0a0e8ec-10a5-4200-87d1-df2c2bd3bc54",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Books",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d1502b34-950d-4a38-8d95-2c15694253e5",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(8) > td:nth-child(1)",
+      "targets": [
+        ["css=tr:nth-child(8) > td:nth-child(1)", "css:finder"],
+        ["xpath=//tr[8]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'название')]", "xpath:innerText"]
+      ],
+      "value": "название"
+    }, {
+      "id": "635b5e80-6ad6-46c8-837e-7eb3a69d720b",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(4) > .button",
+      "targets": [
+        ["css=form:nth-child(4) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[10]", "xpath:attributes"],
+        ["xpath=//div[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'На главную')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eb1cc838-2b00-42f3-94df-dda09a7cdbf8",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Library",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "79b7bb9d-e10b-454f-9eea-94894289a565",
+    "name": "give_book",
+    "commands": [{
+      "id": "8f9a776f-527f-496c-80a3-6e5f93534098",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a9eebecd-0824-4ff6-a282-b0294789a3d8",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "879x746",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2d221114-fd72-4197-a1e4-381e13b51f30",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(9) > .button",
+      "targets": [
+        ["css=form:nth-child(9) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[3]", "xpath:attributes"],
+        ["xpath=//form[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Выдать книгу')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7482647f-5808-4465-bbde-3fe14cfd029a",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Give Book",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "acf4fb3b-6f49-4ce3-8729-cb766a343cb0",
+      "comment": "",
+      "command": "select",
+      "target": "name=reader",
+      "targets": [],
+      "value": "label=Фамилия"
+    }, {
+      "id": "493cbc24-4d1a-467f-9ecd-ad114989bf98",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-control:nth-child(1) > option:nth-child(8)",
+      "targets": [
+        ["css=.form-control:nth-child(1) > option:nth-child(8)", "css:finder"],
+        ["xpath=//option[@value='Фамилия']", "xpath:attributes"],
+        ["xpath=//option[8]", "xpath:position"],
+        ["xpath=//option[contains(.,'Фамилия')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a372e658-c630-48be-b927-a05f0cba8244",
+      "comment": "",
+      "command": "click",
+      "target": "name=book",
+      "targets": [
+        ["name=book", "name"],
+        ["css=.form-control:nth-child(2)", "css:finder"],
+        ["xpath=//select[@name='book']", "xpath:attributes"],
+        ["xpath=//select[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a7602c57-66cb-4f8d-8f8d-01d6c72385d6",
+      "comment": "",
+      "command": "select",
+      "target": "name=book",
+      "targets": [],
+      "value": "label=название"
+    }, {
+      "id": "47c8f674-672d-4052-97ee-142e706a2618",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-control:nth-child(2) > option:nth-child(8)",
+      "targets": [
+        ["css=.form-control:nth-child(2) > option:nth-child(8)", "css:finder"],
+        ["xpath=//option[@value='название']", "xpath:attributes"],
+        ["xpath=//select[2]/option[8]", "xpath:position"],
+        ["xpath=//option[contains(.,'название')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7e574bfa-a24c-4794-a539-c4b60aa1876a",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(3)",
+      "targets": [
+        ["css=button:nth-child(3)", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Выдать')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f1082c8b-d284-4229-8082-a842d7e3500e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button",
+      "targets": [
+        ["css=.button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'На главную')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3aae888b-674b-463a-a21e-46f48d2fd604",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(5) > .button",
+      "targets": [
+        ["css=form:nth-child(5) > .button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Читатели')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c7a68cf-0884-4e87-87be-cf0e90d75fd6",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(8) .mini_button",
+      "targets": [
+        ["css=tr:nth-child(8) .mini_button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[9]", "xpath:attributes"],
+        ["xpath=//tr[8]/td[5]/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "455098fe-51b7-45fd-8f6a-c9e601c3ad6e",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(6) > .button",
+      "targets": [
+        ["css=form:nth-child(6) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Список прочтенных книг')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9463e433-2a18-4b26-923d-fd55304b1923",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Books for Reader",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6cc90a1e-cb35-484c-9a08-85e406963b17",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=td:nth-child(1)",
+      "targets": [
+        ["css=td:nth-child(1)", "css:finder"],
+        ["xpath=//td", "xpath:position"],
+        ["xpath=//td[contains(.,'название')]", "xpath:innerText"]
+      ],
+      "value": "название"
+    }, {
+      "id": "d8889b57-0a4a-4b04-bf24-227f5658e0f9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button:nth-child(1)",
+      "targets": [
+        ["css=.button:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[3]", "xpath:attributes"],
+        ["xpath=//form[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'На главную')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ef797735-770c-483d-92e6-74cf7e5917ec",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(7) > .button",
+      "targets": [
+        ["css=form:nth-child(7) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Книги')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "de71fd3c-8011-4583-a6c3-af1696197609",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(8) .mini_button",
+      "targets": [
+        ["css=tr:nth-child(8) .mini_button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[9]", "xpath:attributes"],
+        ["xpath=//tr[8]/td[4]/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5df7c294-8a93-40a3-ac9f-887f52a05e02",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(9) > .button",
+      "targets": [
+        ["css=form:nth-child(9) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Список читателей книги')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "77f52cd9-d48e-48f5-abb7-a740c62cdc90",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Readers of Book",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "785421d5-5c47-4d84-991c-bd570753c5b4",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=td:nth-child(1)",
+      "targets": [
+        ["css=td:nth-child(1)", "css:finder"],
+        ["xpath=//td", "xpath:position"],
+        ["xpath=//td[contains(.,'Фамилия')]", "xpath:innerText"]
+      ],
+      "value": "Фамилия"
+    }, {
+      "id": "5b0048d4-3eb4-4de9-b57f-32672bdc7787",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button:nth-child(1)",
+      "targets": [
+        ["css=.button:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[3]", "xpath:attributes"],
+        ["xpath=//form[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'На главную')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab842d9f-fe0b-4ca7-889d-c45b3c0d6d0d",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Library",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "f86ccfee-d8fb-415f-9cb0-e155994ad2f4",
+    "name": "return_book",
+    "commands": [{
+      "id": "a1da7bba-d7d9-4c12-80a8-d4c6351c9047",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7671867a-38e7-4846-9eb7-655f84a90921",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "879x746",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fbacc4c0-e7d8-410a-8c51-41ec5951f4cd",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(11) > .button",
+      "targets": [
+        ["css=form:nth-child(11) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[4]", "xpath:attributes"],
+        ["xpath=//form[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Вернуть книгу')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "76f2901d-c913-41f6-a625-b8a86e8fba80",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Return Book",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "21f6e8e8-b41b-42e4-8e2f-b565354cb9fc",
+      "comment": "",
+      "command": "select",
+      "target": "name=reader",
+      "targets": [],
+      "value": "label=Фамилия"
+    }, {
+      "id": "2d71fdc4-54a9-49a0-a0f6-68d29b271d22",
+      "comment": "",
+      "command": "click",
+      "target": "css=option:nth-child(2)",
+      "targets": [
+        ["css=option:nth-child(2)", "css:finder"],
+        ["xpath=//option[@value='Фамилия']", "xpath:attributes"],
+        ["xpath=//option[2]", "xpath:position"],
+        ["xpath=//option[contains(.,'Фамилия')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff4b8862-3136-430f-abfb-de201d786298",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(2)",
+      "targets": [
+        ["css=button:nth-child(2)", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Выбрать')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5af1a1fe-f603-4fe1-8f00-fc0d81110fb0",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Return Book",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f57eb73b-9757-4a40-ba25-f4e484f187a9",
+      "comment": "",
+      "command": "click",
+      "target": "name=book",
+      "targets": [
+        ["name=book", "name"],
+        ["css=.form-control", "css:finder"],
+        ["xpath=//select[@name='book']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "289d6581-744e-408c-9170-e6307379c074",
+      "comment": "",
+      "command": "select",
+      "target": "name=book",
+      "targets": [],
+      "value": "label=название"
+    }, {
+      "id": "4e75f995-d1ff-4459-a068-bd01f73800a2",
+      "comment": "",
+      "command": "click",
+      "target": "css=option:nth-child(2)",
+      "targets": [
+        ["css=option:nth-child(2)", "css:finder"],
+        ["xpath=//option[@value='название']", "xpath:attributes"],
+        ["xpath=//option[2]", "xpath:position"],
+        ["xpath=//option[contains(.,'название')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fba1f7a3-c338-4792-a947-8b98d0cf720d",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(3)",
+      "targets": [
+        ["css=button:nth-child(3)", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Вернуть')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2893956e-5155-4b91-be83-78fbe0864ee6",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Return Book",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2ef92e70-8145-4e68-8631-34cf11cc6839",
+      "comment": "",
+      "command": "click",
+      "target": "css=form:nth-child(6) > .button",
+      "targets": [
+        ["css=form:nth-child(6) > .button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[3]", "xpath:attributes"],
+        ["xpath=//form[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'На главную')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3fc43f7-78bb-48a7-87a9-0750a156dbc9",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Library",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "390cb9b8-5749-4101-823a-158e899a0cda",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}
