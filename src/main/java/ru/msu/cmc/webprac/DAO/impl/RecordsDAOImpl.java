@@ -50,19 +50,23 @@ public class RecordsDAOImpl extends RecordsDAO {
                         "AND rd.surname LIKE :surname " +
                         "AND cp.is_taken_now LIKE 'Yes'", Records.class)
                 .setParameter("book", book).setParameter("surname", surname);
-        Records record = query.getResultList().get(0);
-
-        Date current_date = new Date(System.currentTimeMillis());
-        record.setReturning_date(current_date);
+        Records record = query.getSingleResult();
         session.close();
 
         session = getSessionFactory().openSession();
         Query<Book_Copy> query2 = session.createQuery("SELECT cp " +
-                        "FROM Records rec " +
-                        "LEFT JOIN rec.copy_id cp " +
-                        "WHERE cp.is_taken_now LIKE 'Yes'", Book_Copy.class);
+                "FROM Records rec " +
+                "LEFT JOIN rec.copy_id cp " +
+                "LEFT JOIN rec.reader_id read " +
+                "LEFT JOIN cp.book_id bk " +
+                "WHERE cp.is_taken_now LIKE 'Yes' " +
+                    "AND bk.name LIKE :book " +
+                    "AND read.surname LIKE :surname", Book_Copy.class)
+                .setParameter("book", book).setParameter("surname", surname);
         Book_Copy copy = query2.getSingleResult();
 
+        Date current_date = new Date(System.currentTimeMillis());
+        record.setReturning_date(current_date);
         copy.setIs_taken_now("No");
         DAOFactory.getInstance().getCopyDAO().updateCopy(copy);
         DAOFactory.getInstance().getRecordsDAO().updateRecord(record);

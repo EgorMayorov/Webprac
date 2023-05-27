@@ -4,7 +4,7 @@
 
 <head>
     <meta charset='utf-8'>
-    <title>Give Book</title>
+    <title>Return Book</title>
     <style>
         body {
             font-family: 'modern',sans-serif;
@@ -28,15 +28,8 @@
 
 <body>
 <div style="text-align: center">
-    <h1>Выдача книги читателю</h1>
-    <form th:action="@{/give_book}" method="post">
-        <select class="form-control" name="reader">
-            <option value="" disabled selected hidden>Выберите читателя</option>
-            <option th:each="rd: ${readers}"
-                    th:value="${rd.surname}"
-                    th:text="${rd.surname}">
-            </option>
-        </select>
+    <h1>Возврат книги читателем</h1>
+    <form th:action="@{/return_book/book}" method="post">
         <select class="form-control" name="book">
             <option value="" disabled selected hidden>Выберите книгу</option>
             <option th:each="bk: ${books}"
@@ -44,13 +37,13 @@
                     th:text="${bk.name}">
             </option>
         </select>
-        <button type="submit">Выдать</button>
+        <input type="hidden" name="reader" th:value="${reader}">
+        <button type="submit">Вернуть</button>
     </form>
-
-    <form th:if="${is_taken}">
-        Книга уже выдана пользователю, <br>необходимо вернуть ее, <br>прежде чем получить снова
+    <br>
+    <form th:action="@{/return_book/reader}" method="get">
+        <button type="submit" class="button">К выбору читателя</button>
     </form>
-
     <br>
     <form th:action="@{/}" method="get">
         <button type="submit" class="button">На главную</button>

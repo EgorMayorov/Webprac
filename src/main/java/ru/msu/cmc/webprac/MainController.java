@@ -193,6 +193,7 @@ public class MainController {
         List<Books> books = DAOFactory.getInstance().getBooksDAO().getAllBooks();
         model.addAttribute("books", books);
         model.addAttribute("readers", readers);
+        model.addAttribute("is_taken", false);
         return "give_book";
     }
 
@@ -200,11 +201,49 @@ public class MainController {
     public String giveBookPost (Model model,
                                 @RequestParam(name = "reader")String reader,
                                 @RequestParam(name = "book") String book) {
-        DAOFactory.getInstance().getRecordsDAO().addRecord(new Records(reader, book));
+        List<Books> books_on_hands = DAOFactory.getInstance().getReaderDAO().getTakenReaderBooks(reader);
+        boolean is_taken = false;
+        if (books_on_hands != null) {
+            if (books_on_hands.contains(DAOFactory.getInstance().getBooksDAO().getBookByName(book).get(0))) {
+                is_taken = true;
+            } else {
+                DAOFactory.getInstance().getRecordsDAO().addRecord(new Records(reader, book));
+            }
+        } else {
+            DAOFactory.getInstance().getRecordsDAO().addRecord(new Records(reader, book));
+        }
         List<Reader> readers = DAOFactory.getInstance().getReaderDAO().getAllReader();
         List<Books> books = DAOFactory.getInstance().getBooksDAO().getAllBooks();
         model.addAttribute("books", books);
         model.addAttribute("readers", readers);
+        model.addAttribute("is_taken", is_taken);
         return "give_book";
+    }
+
+    @GetMapping("/return_book/reader")
+    public String returnBookReaderInfo (Model model) {
+        List<Reader> readers = DAOFactory.getInstance().getReaderDAO().getReadersWithBooks();
+        model.addAttribute("readers", readers);
+        return "return_book_reader";
+    }
+
+    @GetMapping("/return_book/book")
+    public String returnBookChooseReader (Model model,
+                                          @RequestParam(name = "reader") String reader_surname) {
+        List<Books> books = DAOFactory.getInstance().getReaderDAO().getTakenReaderBooks(reader_surname);
+        model.addAttribute("books", books);
+        model.addAttribute("reader", reader_surname);
+        return "return_book_book";
+    }
+
+    @PostMapping("/return_book/book")
+    public String returnBook (Model model,
+                              @RequestParam(name = "reader") String reader_surname,
+                              @RequestParam(name = "book") String book_name) {
+        DAOFactory.getInstance().getRecordsDAO().returnBook(reader_surname, book_name);
+        List<Books> books = DAOFactory.getInstance().getReaderDAO().getTakenReaderBooks(reader_surname);
+        model.addAttribute("books", books);
+        model.addAttribute("reader", reader_surname);
+        return "return_book_book";
     }
 }

@@ -90,4 +90,38 @@ public class ReaderDAOImpl extends ReaderDAO {
         }
         return result;
     }
+
+    @Override
+    public List<Books> getTakenReaderBooks (String surname) {
+        List<Books> result = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Query<Books> query = session.createQuery("Select bok " +
+                        "FROM Records rec " +
+                        "left join rec.reader_id read " +
+                        "left join rec.copy_id cop " +
+                        "left join cop.book_id bok " +
+                        "Where read.surname LIKE :surname " +
+                        "and cop.is_taken_now LIKE 'Yes'", Books.class)
+                .setParameter("surname", "%" + surname + "%");
+        if (query.getResultList().size() != 0) {
+            result = query.getResultList();
+        }
+        return result;
+    }
+
+    @Override
+    public List<Reader> getReadersWithBooks () {
+        List<Reader> result = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Query<Reader> query = session.createQuery("SELECT DISTINCT read " +
+                "FROM Records rec " +
+                "LEFT JOIN rec.reader_id read " +
+                "LEFT JOIN rec.copy_id cop " +
+                "WHERE cop.is_taken_now LIKE 'Yes' " +
+                "AND rec.returning_date is NULL", Reader.class);
+        if (query.getResultList().size() != 0) {
+            result = query.getResultList();
+        }
+        return result;
+    }
 }

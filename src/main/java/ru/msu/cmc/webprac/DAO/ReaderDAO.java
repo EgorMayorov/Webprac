@@ -13,4 +13,6 @@ public abstract class ReaderDAO {
     public abstract List<Reader> getReaderBySurname(String name);
     public abstract List<Books> getReaderBooksBySurname(String name);
     public abstract List<Reader> getAllReader();
+    public abstract List<Books> getTakenReaderBooks(String surname);
+    public abstract List<Reader> getReadersWithBooks();
 }
